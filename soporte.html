@@ -5,7 +5,7 @@
 <header class="top"><img src="icon.png" alt="Icono de SOS Impact"><div><h1>Soporte</h1><div class="mut">Primeros pasos y preguntas frecuentes</div></div></header>
 <nav><a href="index.html">Inicio</a><a href="soporte.html">Soporte y primeros pasos</a><a href="privacidad.html">Política de privacidad</a></nav>
 
-<h2>Primeros pasos</h2>
+<h2 id="primeros">Primeros pasos</h2>
 <ol>
 <li><strong>Crea tu bot de Telegram.</strong> En Telegram abre <code>@BotFather</code>, escribe <code>/newbot</code> y sigue los pasos. Te dará un <em>token</em> con esta forma: <code>123456789:AAH…</code>.</li>
 <li><strong>Escríbele al bot.</strong> Abre tu bot y envía <code>/start</code>. Cada persona que deba recibir los avisos tiene que hacer lo mismo con tu bot.</li>
@@ -26,12 +26,25 @@
 <p>No. Zepp OS cierra las apps unos segundos después de que se apague la pantalla y no permite leer el acelerómetro en segundo plano. Por eso SOS Impact mantiene la pantalla encendida mientras vigila (opción «Siempre encendida», la recomendada), lo que gasta más batería. Si eliges que la pantalla se apague, la app deja de detectar mientras está apagada y se reabre al despertar el reloj.</p>
 <h3>¿Llama al 112 o manda SMS?</h3>
 <p>No. Zepp OS no permite a las apps llamar ni enviar SMS. El aviso se manda por Telegram e incluye el recordatorio de llamar al 112. Opcionalmente puedes activar una <strong>llamada de voz por Telegram</strong> a tus contactos (en los ajustes, «Llamada por Telegram»): cada contacto debe escribir <code>/start</code> a <code>@CallMeBot_txtbot</code> una vez.</p>
+<h3>¿Qué hace el botón «Medir»?</h3>
+<p>En la pantalla principal del reloj, «Medir» muestra tu <strong>ritmo cardíaco</strong> en grande con su categoría (muy bajo, relajado, normal, elevado, alto, muy alto), la barra de colores y, debajo, el <strong>oxígeno en sangre (SpO₂)</strong> y el <strong>estrés</strong>. «Repetir» vuelve a medir. Es orientativo, no un dispositivo médico. Mientras mides (hasta 45 s) la detección de caídas está en pausa. Los datos solo se muestran en el reloj. En un aviso de emergencia se envían el ritmo cardíaco, el oxígeno y el estrés, si el reloj tiene lecturas recientes.</p>
+<h3>¿Qué es el aviso de batería baja?</h3>
+<p>Cuando la batería del reloj baja del 15 %, SOS Impact avisa una sola vez por Telegram a tus contactos, porque con el reloj apagado no se detectan caídas. Se vuelve a activar al recargar por encima del 30 %. Puedes desactivarlo en los ajustes.</p>
 <h3>El aviso llega sin ubicación</h3>
 <p>El GPS del reloj necesita cielo abierto o estar junto a una ventana para obtener posición. Comprueba que la ubicación del reloj está activada y que la app tiene permiso. Si no hay posición, el aviso sale igualmente con «ubicación no disponible».</p>
 <h3>Salta sin querer / no salta</h3>
 <p>Cambia la sensibilidad en los ajustes (Baja, Media, Alta) o el perfil. Los ajustes incluyen una sección <em>Diagnóstico</em> con los últimos eventos; mándanosla para ajustar.</p>
 <h3>He cambiado de móvil</h3>
 <p>La licencia queda en el reloj. Los ajustes de Telegram se guardan en el móvil y puede que tengas que volver a introducirlos.</p>
+
+<h3>¿Cómo pruebo la app sin tirarme al suelo?</h3>
+<p>Con SOS Impact abierto en el reloj (vigilando), entra en los ajustes del móvil y pulsa <em>Simular una caída</em>. El reloj muestra la cuenta atrás con vibración y sonido, pero <strong>no envía ningún aviso</strong>. Para probar el envío de verdad usa <em>Enviar aviso de prueba</em>.</p>
+<h3>¿Qué es la comprobación diaria?</h3>
+<p>Opcional. En los ajustes eliges una hora (1-22). Ese día, a partir de esa hora, el reloj pregunta «¿Todo bien?» y tienes 60 segundos para pulsar «Estoy bien». Si no respondes, se avisa a tus contactos. Solo pregunta una vez al día y solo si la app está vigilando con la pantalla encendida.</p>
+<h3>¿En qué idiomas está?</h3>
+<p>Español, inglés, francés, alemán, italiano y portugués. Se cambia en los ajustes del móvil (sección Idioma).</p>
+<h3>La llamada por Telegram no suena o tarda</h3>
+<p>Usa el servicio gratuito CallMeBot, que a veces pone las llamadas en cola o está saturado. Pon el <strong>@usuario</strong> de Telegram de cada contacto (con el teléfono suele fallar), que cada contacto escriba <code>/start</code> a <code>@CallMeBot_txtbot</code> y que en Telegram → Privacidad → Llamadas permita llamadas a «Todos». Es un extra opcional: el aviso por mensaje de Telegram es lo principal.</p>
 
 <h2>Contacto</h2>
 <p>Escribe a <strong>SuperIA.superintelligence@proton.me</strong> indicando el modelo de reloj y, si puedes, una captura de <em>Ajustes → Diagnóstico</em>.</p>

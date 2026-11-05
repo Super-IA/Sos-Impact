@@ -1,0 +1,10 @@
+SUBIR A GITHUB PAGES (https://super-ia.github.io/Sos-Impact/)
+1. En el repositorio "Sos-Impact" de GitHub: Add file > Upload files.
+2. Arrastra TODO el contenido de esta carpeta (index.html, privacidad.html, soporte.html, style.css, icon.png y .nojekyll) a la raíz del repositorio.
+3. Commit changes. En Settings > Pages, la rama debe ser main (o la que uses) y carpeta / (root).
+4. A los 1-2 minutos estarán en:
+   https://super-ia.github.io/Sos-Impact/
+   https://super-ia.github.io/Sos-Impact/privacidad.html
+   https://super-ia.github.io/Sos-Impact/soporte.html
+
+Los datos de contacto (Super-ia y SuperIA.superintelligence@proton.me) ya están puestos.
