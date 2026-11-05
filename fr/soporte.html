@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assistance – SOS Impact</title><link rel="icon" href="../icon.png"><link rel="stylesheet" href="../style.css"></head>
+<body><main>
+<header class="top"><img src="../icon.png" alt="Icône de SOS Impact"><div><h1>Assistance</h1><div class="mut">Premiers pas et questions fréquentes</div></div></header>
+<nav><a href="index.html">Accueil</a><a href="soporte.html">Assistance et premiers pas</a><a href="privacidad.html">Politique de confidentialité</a></nav>
+<div class="langs"><a href="../soporte.html" hreflang="es">Español</a> <a href="../en/soporte.html" hreflang="en">English</a> <b>Français</b> <a href="../de/soporte.html" hreflang="de">Deutsch</a> <a href="../it/soporte.html" hreflang="it">Italiano</a> <a href="../pt/soporte.html" hreflang="pt">Português</a></div>
+
+<h2 id="primeros">Premiers pas</h2>
+<ol>
+<li><strong>Crée ton bot Telegram.</strong> Dans Telegram, ouvre <code>@BotFather</code>, écris <code>/newbot</code> et suis les étapes. Il te donnera un <em>token</em> de cette forme : <code>123456789:AAH…</code>.</li>
+<li><strong>Écris à ton bot.</strong> Ouvre ton bot et envoie <code>/start</code>. Chaque personne qui doit recevoir les alertes doit faire la même chose avec ton bot.</li>
+<li><strong>Configure l'app.</strong> Dans l'app Zepp sur ton téléphone, ouvre les réglages de SOS Impact : coche la case de la politique de confidentialité, colle le token et appuie sur <em>Détecter le chat ID</em>. Ensuite, appuie sur <em>Envoyer une alerte de test</em>.</li>
+<li><strong>Saisis ton nom</strong> et, si tu le souhaites, tes informations médicales (allergies, médicaments…). Elles figureront dans l'alerte.</li>
+<li><strong>Ouvre l'app sur la montre.</strong> Elle doit afficher « SURVEILLANCE ». Laisse l'app ouverte et l'écran allumé.</li>
+</ol>
+
+<h2>Activer la licence</h2>
+<ol>
+<li>Après les 7 jours d'essai, ouvre l'app sur la montre ou dans les réglages du téléphone et copie ton <strong>code de l'appareil</strong>.</li>
+<li>Envoie-le pour recevoir ta clé d'activation.</li>
+<li>Colle-la dans les réglages de SOS Impact (<em>Clé d'activation</em>) et appuie sur <em>Valider la licence</em>. La montre se déverrouille toute seule.</li>
+</ol>
+
+<h2>Questions fréquentes</h2>
+<h3>Fonctionne-t-elle avec l'écran éteint ou en arrière-plan ?</h3>
+<p>Non. Zepp OS ferme les apps quelques secondes après l'extinction de l'écran et ne permet pas de lire l'accéléromètre en arrière-plan. C'est pourquoi SOS Impact garde l'écran allumé pendant la surveillance (option « Toujours allumé », la recommandée), ce qui consomme plus de batterie. Si tu choisis que l'écran s'éteigne, l'app cesse de détecter tant qu'il est éteint et se rouvre au réveil de la montre.</p>
+<h3>Appelle-t-elle le 112 ou envoie-t-elle des SMS ?</h3>
+<p>Non. Zepp OS ne permet pas aux apps d'appeler ni d'envoyer des SMS. L'alerte est envoyée par Telegram et comprend le rappel d'appeler le 112. En option, tu peux activer un <strong>appel vocal par Telegram</strong> à tes contacts (dans les réglages, « Appel par Telegram ») : chaque contact doit écrire une fois <code>/start</code> à <code>@CallMeBot_txtbot</code>.</p>
+<h3>Quelles données de santé l'alerte contient-elle ?</h3>
+<p>Si la montre a des mesures récentes (des 6 dernières heures), l'alerte inclut le <strong>rythme cardiaque</strong>, l'<strong>oxygène sanguin (SpO₂)</strong> et le <strong>stress</strong>. C'est indicatif, ce n'est pas un dispositif médical. Si ta montre n'en mesure pas un, cette ligne n'apparaît pas.</p>
+<h3>Qu'est-ce que l'alerte de batterie faible ?</h3>
+<p>Lorsque la batterie de la montre passe sous 15 %, SOS Impact prévient une seule fois tes contacts par Telegram, car avec la montre éteinte les chutes ne sont pas détectées. Elle se réactive après une recharge au-dessus de 30 %. Tu peux la désactiver dans les réglages.</p>
+<h3>L'alerte arrive sans position</h3>
+<p>Le GPS de la montre a besoin de ciel dégagé ou d'être près d'une fenêtre pour obtenir une position. Vérifie que la localisation de la montre est activée et que l'app y est autorisée. S'il n'y a pas de position, l'alerte part quand même avec « indisponible ».</p>
+<h3>Elle se déclenche sans raison / ne se déclenche pas</h3>
+<p>Modifie la sensibilité dans les réglages (Basse, Moyenne, Haute) ou le profil. Les réglages comprennent une section <em>Diagnostic</em> avec les derniers événements ; envoie-la-nous pour affiner.</p>
+<h3>J'ai changé de téléphone</h3>
+<p>La licence reste sur la montre. Les réglages Telegram sont enregistrés sur le téléphone et tu devras peut-être les saisir à nouveau.</p>
+
+<h3>Comment tester l'app sans me jeter par terre ?</h3>
+<p>Avec SOS Impact ouvert sur la montre (en surveillance), va dans les réglages du téléphone et appuie sur <em>Simuler une chute (sur la montre uniquement)</em>. La montre affiche le compte à rebours avec vibration et son, mais <strong>n'envoie aucune alerte</strong>. Pour tester réellement l'envoi, utilise <em>Envoyer une alerte de test</em>.</p>
+<h3>Qu'est-ce que le contrôle quotidien ?</h3>
+<p>Optionnel. Dans les réglages, tu choisis une heure (1-22). Ce jour-là, à partir de cette heure, la montre demande « TOUT VA BIEN ? » et tu as 60 secondes pour appuyer sur « ÇA VA ». Si tu ne réponds pas, tes contacts sont prévenus. Elle ne demande qu'une fois par jour et seulement si l'app est en surveillance avec l'écran allumé.</p>
+<h3>Dans quelles langues est-elle disponible ?</h3>
+<p>Espagnol, anglais, français, allemand, italien et portugais. Cela se change dans les réglages du téléphone (section Langue).</p>
+<h3>L'appel par Telegram ne sonne pas ou tarde</h3>
+<p>Il utilise le service gratuit CallMeBot, qui met parfois les appels en file d'attente ou est saturé. Saisis le <strong>@utilisateur</strong> Telegram de chaque contact (avec le téléphone, cela échoue souvent), demande à chaque contact d'écrire <code>/start</code> à <code>@CallMeBot_txtbot</code> et, dans Telegram → Confidentialité → Appels, d'autoriser les appels de « Tout le monde ». C'est un extra optionnel : l'alerte par message Telegram reste l'essentiel.</p>
+
+<h3>Puis-je recevoir l'alerte par WhatsApp ?</h3>
+<p>Oui, comme extra <strong>expérimental et optionnel</strong> (réglages → WhatsApp). Il utilise le service gratuit non officiel CallMeBot, qui peut être lent ou échouer, et n'a ni bouton « J'ai vu » ni rappels. Chaque contact doit l'activer une fois en enregistrant le numéro indiqué sur callmebot.com et en lui envoyant par WhatsApp « I allow callmebot to send me messages » ; il recevra une clé numérique et tu la saisiras sous la forme <code>+34600111222:clé</code>. Le message contient ton nom et le lien vers ta position, sans données médicales. L'alerte par Telegram reste la principale.</p>
+
+<h2>Contact</h2>
+<p>Écris à <strong>SuperIA.superintelligence@proton.me</strong> en indiquant le modèle de ta montre et, si possible, une capture de <em>Réglages → Diagnostic</em>.</p>
+<footer>© 2026 Super-ia · SOS Impact · <a href="privacidad.html">Politique de confidentialité</a></footer>
+</main></body></html>
