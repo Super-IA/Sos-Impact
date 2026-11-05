@@ -2,8 +2,9 @@
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Política de privacidad – SOS Impact</title><link rel="icon" href="icon.png"><link rel="stylesheet" href="style.css"></head>
 <body><main>
-<header class="top"><img src="icon.png" alt="Icono de SOS Impact"><div><h1>Política de privacidad</h1><div class="mut">SOS Impact · Última actualización: 4 de noviembre de 2026<a href="#en">English version below</a></div></div></header>
+<header class="top"><img src="icon.png" alt="Icono de SOS Impact"><div><h1>Política de privacidad</h1><div class="mut">SOS Impact · Última actualización: 5 de noviembre de 2026</div></div></header>
 <nav><a href="index.html">Inicio</a><a href="soporte.html">Soporte y primeros pasos</a><a href="privacidad.html">Política de privacidad</a></nav>
+<div class="langs"><b>Español</b> <a href="en/privacidad.html" hreflang="en">English</a> <a href="fr/privacidad.html" hreflang="fr">Français</a> <a href="de/privacidad.html" hreflang="de">Deutsch</a> <a href="it/privacidad.html" hreflang="it">Italiano</a> <a href="pt/privacidad.html" hreflang="pt">Português</a></div>
 
 <h2>1. Quién es el responsable</h2>
 <p>El responsable del tratamiento es <strong>Super-ia</strong>, desarrollador de SOS Impact. Contacto: <strong>SuperIA.superintelligence@proton.me</strong>.</p>
@@ -16,8 +17,9 @@
 <tr><th>Dato</th><th>Para qué</th><th>Dónde se procesa o guarda</th></tr>
 <tr><td>Datos de los sensores de movimiento (acelerómetro y giroscopio)</td><td>Detectar impactos e inmovilidad</td><td>Solo en tu reloj, en tiempo real. No se guardan ni se envían.</td></tr>
 <tr><td>Ubicación (GPS del reloj)</td><td>Incluir tu posición en el aviso y en las actualizaciones posteriores</td><td>Se envía a Telegram solo cuando hay un aviso. En el reloj solo se conserva unos minutos.</td></tr>
-<tr><td>Pulso, oxígeno en sangre (SpO₂) y estrés (datos de salud que mide tu reloj; solo si hay una lectura reciente)</td><td>Incluirlos en el aviso, y mostrarlos en pantalla cuando pulsas «Medir»</td><td>Se envían a Telegram solo cuando hay un aviso. Al pulsar «Medir» solo se muestran en el reloj, no se envían ni se guardan.</td></tr>
+<tr><td>Pulso, oxígeno en sangre (SpO₂) y estrés (datos de salud que mide tu reloj; solo si hay una lectura reciente)</td><td>Incluirlos en el aviso de emergencia</td><td>Se envían a Telegram solo cuando hay un aviso. No se guardan fuera de tu reloj, tu móvil y Telegram.</td></tr>
 <tr><td>Nombre e información médica que tú escribes (alergias, medicación…)</td><td>Incluirlos en el aviso</td><td>Se guardan en los ajustes de la app Zepp de tu móvil. Se envían a Telegram solo cuando hay un aviso.</td></tr>
+<tr><td>Nombre, enlace a tu ubicación y teléfono y clave de tus contactos de WhatsApp (solo si activas esta función opcional y experimental)</td><td>Enviar el aviso también por WhatsApp</td><td>Se envían al servicio externo CallMeBot, que reenvía el mensaje por WhatsApp, solo cuando hay un aviso. Recibe tu nombre, el texto de la alerta con el enlace a tu ubicación y el teléfono y la clave de cada contacto: no recibe ni pulso ni datos médicos. WhatsApp (Meta) también procesa el mensaje según sus propias condiciones.</td></tr>
 <tr><td>Nombre y contactos de la llamada por Telegram (solo si activas esta función opcional)</td><td>Hacer una llamada de voz a tus contactos que lee un aviso corto</td><td>Se envían al servicio externo CallMeBot solo cuando hay un aviso. Solo recibe tu nombre, una frase fija y el @usuario o teléfono del contacto: no recibe ubicación, pulso ni datos médicos.</td></tr>
 <tr><td>Token del bot e identificadores de chat de tus contactos</td><td>Enviar los avisos</td><td>Se guardan en los ajustes de la app Zepp de tu móvil.</td></tr>
 <tr><td>Código de dispositivo, clave de licencia y fecha de inicio de la prueba</td><td>Gestionar la licencia, que funciona sin conexión</td><td>En tu reloj y en los ajustes de tu móvil.</td></tr>
@@ -30,7 +32,7 @@
 <h2>5. Terceros</h2>
 <ul>
 <li><strong>Telegram</strong> (Telegram Messenger Inc. / Telegram FZ-LLC) recibe y entrega los avisos a tus contactos y los trata según su propia política de privacidad: <a href="https://telegram.org/privacy">telegram.org/privacy</a>.</li>
-<li><strong>CallMeBot</strong> (solo si activas la llamada por Telegram): servicio externo que realiza la llamada de voz. Recibe tu nombre, una frase fija y el usuario o teléfono de tus contactos. Su política: <a href="https://www.callmebot.com">callmebot.com</a>.</li>
+<li><strong>CallMeBot</strong> (solo si activas la llamada por Telegram o el aviso por WhatsApp): servicio externo que realiza la llamada de voz o reenvía el mensaje por WhatsApp. Recibe tu nombre, una frase fija o el texto de la alerta con el enlace a tu ubicación, y el usuario o teléfono de tus contactos. Su política: <a href="https://www.callmebot.com">callmebot.com</a>.</li>
 <li><strong>Zepp Health / Amazfit</strong>: la app funciona dentro del reloj y de la app Zepp, que tratan datos según su propia política.</li>
 <li>Tus contactos reciben tu ubicación, nombre y datos médicos. Informa a las personas que añadas.</li>
 </ul>
@@ -56,63 +58,5 @@
 <h2>12. Cambios</h2>
 <p>Si esta política cambia, se actualizará aquí con una nueva fecha y, si el cambio es importante, se pedirá de nuevo tu aceptación.</p>
 
-<hr style="margin:40px 0;border:0;border-top:1px solid var(--bd)">
-
-<div id="en" lang="en">
-<h1>Privacy policy</h1>
-<p class="mut">SOS Impact · Last updated: 4 November 2026</p>
-
-<h2>1. Controller</h2>
-<p>The controller is <strong>Super-ia</strong>, developer of SOS Impact. Contact: <strong>SuperIA.superintelligence@proton.me</strong>.</p>
-
-<h2>2. What the app does</h2>
-<p>SOS Impact is an app for Amazfit watches with Zepp OS 3.0 or later. It detects strong impacts followed by stillness and, if you do not respond, alerts the Telegram contacts you configured.</p>
-
-<h2>3. Data processed and purpose</h2>
-<div class="tbl"><table>
-<tr><th>Data</th><th>Purpose</th><th>Where processed or stored</th></tr>
-<tr><td>Motion sensor data (accelerometer, gyroscope)</td><td>Detect impacts and stillness</td><td>On your watch only, in real time. Not stored or sent.</td></tr>
-<tr><td>Location (watch GPS)</td><td>Include your position in the alert and follow-up updates</td><td>Sent to Telegram only when an alert is raised. Kept on the watch for a few minutes.</td></tr>
-<tr><td>Heart rate, blood oxygen (SpO₂) and stress (health data measured by your watch; only when a recent reading exists)</td><td>Include them in the alert, and show them on screen when you tap “Measure”</td><td>Sent to Telegram only when an alert is raised. When you tap “Measure” they are only shown on the watch, not sent or stored.</td></tr>
-<tr><td>Name and medical information you enter (allergies, medication…)</td><td>Include them in the alert</td><td>Stored in the Zepp app settings on your phone. Sent to Telegram only when an alert is raised.</td></tr>
-<tr><td>Name and contacts for the Telegram call (only if you enable this optional feature)</td><td>Make a voice call to your contacts reading a short alert</td><td>Sent to the external service CallMeBot only when an alert is raised. It receives only your name, a fixed sentence and the contact's @username or phone: no location, heart rate or medical data.</td></tr>
-<tr><td>Bot token and chat IDs of your contacts</td><td>Send alerts</td><td>Stored in the Zepp app settings on your phone.</td></tr>
-<tr><td>Device code, licence key and trial start date</td><td>Manage the licence, which works offline</td><td>On your watch and in your phone settings.</td></tr>
-<tr><td>Usage settings and diagnostic log (latest detection events, alert history)</td><td>App operation and detection tuning</td><td>On your watch and in your phone settings. A few dozen events at most.</td></tr>
-</table></div>
-
-<h2>4. No own server</h2>
-<p>SOS Impact <strong>has no server of its own</strong>. The developer does not receive, see or store your data and uses no analytics, advertising or trackers. Data travels from your watch to your phone (over Bluetooth, via the Zepp app) and from your phone to Telegram.</p>
-
-<h2>5. Third parties</h2>
-<ul>
-<li><strong>Telegram</strong> receives and delivers alerts to your contacts and processes them under its own privacy policy: <a href="https://telegram.org/privacy">telegram.org/privacy</a>.</li>
-<li><strong>CallMeBot</strong> (only if you enable the Telegram call): external service that makes the voice call. It receives your name, a fixed sentence and your contacts' username or phone. See <a href="https://www.callmebot.com">callmebot.com</a>.</li>
-<li><strong>Zepp Health / Amazfit</strong>: the app runs inside the watch and the Zepp app, which process data under their own policy.</li>
-<li>Your contacts receive your location, name and medical data. Please inform the people you add.</li>
-</ul>
-
-<h2>6. Legal basis</h2>
-<p>Processing is based on your <strong>explicit consent</strong> (GDPR Art. 6(1)(a) and, for any health information you choose to include, Art. 9(2)(a)), given by ticking the acceptance box in the settings. You can withdraw it at any time by unticking it, which stops monitoring and alerts, or by uninstalling the app.</p>
-
-<h2>7. Retention and deletion</h2>
-<p>Data stays on your watch and phone until you delete it or uninstall the app. Messages sent to Telegram are kept according to Telegram; you can delete them from its app.</p>
-
-<h2>8. Your rights</h2>
-<p>You may exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to <strong>SuperIA.superintelligence@proton.me</strong>. Since the developer does not store your data, you control most of it directly on your watch, phone and Telegram. You may lodge a complaint with your national data protection authority.</p>
-
-<h2>9. Security</h2>
-<p>Your bot token is stored in your phone settings: do not share it. Communication with Telegram uses HTTPS. No system is infallible.</p>
-
-<h2>10. Children</h2>
-<p>The app is not aimed at children under 14 without the supervision of a parent or guardian.</p>
-
-<h2>11. Use notice</h2>
-<p>SOS Impact is <strong>not a medical device or a certified safety device</strong>. It does not guarantee detection of every fall or delivery of every alert (this depends on the watch, battery, phone, coverage, GPS and Telegram). It does not call emergency services: in an emergency, call <strong>112</strong> (or your local emergency number).</p>
-
-<h2>12. Changes</h2>
-<p>If this policy changes, it will be updated here with a new date and, for important changes, your acceptance will be requested again.</p>
-</div>
-
-<footer>© 2026 Super-ia · SOS Impact · <a href="index.html">Inicio</a></footer>
+<footer>© 2026 Super-ia · SOS Impact · <a href="index.html">Inicio</a> · <a href="soporte.html">Soporte</a></footer>
 </main></body></html>

@@ -4,6 +4,7 @@
 <body><main>
 <header class="top"><img src="icon.png" alt="Icono de SOS Impact"><div><h1>Soporte</h1><div class="mut">Primeros pasos y preguntas frecuentes</div></div></header>
 <nav><a href="index.html">Inicio</a><a href="soporte.html">Soporte y primeros pasos</a><a href="privacidad.html">Política de privacidad</a></nav>
+<div class="langs"><b>Español</b> <a href="en/soporte.html" hreflang="en">English</a> <a href="fr/soporte.html" hreflang="fr">Français</a> <a href="de/soporte.html" hreflang="de">Deutsch</a> <a href="it/soporte.html" hreflang="it">Italiano</a> <a href="pt/soporte.html" hreflang="pt">Português</a></div>
 
 <h2 id="primeros">Primeros pasos</h2>
 <ol>
@@ -26,8 +27,8 @@
 <p>No. Zepp OS cierra las apps unos segundos después de que se apague la pantalla y no permite leer el acelerómetro en segundo plano. Por eso SOS Impact mantiene la pantalla encendida mientras vigila (opción «Siempre encendida», la recomendada), lo que gasta más batería. Si eliges que la pantalla se apague, la app deja de detectar mientras está apagada y se reabre al despertar el reloj.</p>
 <h3>¿Llama al 112 o manda SMS?</h3>
 <p>No. Zepp OS no permite a las apps llamar ni enviar SMS. El aviso se manda por Telegram e incluye el recordatorio de llamar al 112. Opcionalmente puedes activar una <strong>llamada de voz por Telegram</strong> a tus contactos (en los ajustes, «Llamada por Telegram»): cada contacto debe escribir <code>/start</code> a <code>@CallMeBot_txtbot</code> una vez.</p>
-<h3>¿Qué hace el botón «Medir»?</h3>
-<p>En la pantalla principal del reloj, «Medir» muestra tu <strong>ritmo cardíaco</strong> en grande con su categoría (muy bajo, relajado, normal, elevado, alto, muy alto), la barra de colores y, debajo, el <strong>oxígeno en sangre (SpO₂)</strong> y el <strong>estrés</strong>. «Repetir» vuelve a medir. Es orientativo, no un dispositivo médico. Mientras mides (hasta 45 s) la detección de caídas está en pausa. Los datos solo se muestran en el reloj. En un aviso de emergencia se envían el ritmo cardíaco, el oxígeno y el estrés, si el reloj tiene lecturas recientes.</p>
+<h3>¿Qué datos de salud lleva el aviso?</h3>
+<p>Si el reloj tiene lecturas recientes (de las últimas 6 horas), el aviso incluye el <strong>ritmo cardíaco</strong>, el <strong>oxígeno en sangre (SpO₂)</strong> y el <strong>estrés</strong>. Es orientativo, no un dispositivo médico. Si tu reloj no mide alguno, esa línea no aparece.</p>
 <h3>¿Qué es el aviso de batería baja?</h3>
 <p>Cuando la batería del reloj baja del 15 %, SOS Impact avisa una sola vez por Telegram a tus contactos, porque con el reloj apagado no se detectan caídas. Se vuelve a activar al recargar por encima del 30 %. Puedes desactivarlo en los ajustes.</p>
 <h3>El aviso llega sin ubicación</h3>
@@ -45,6 +46,9 @@
 <p>Español, inglés, francés, alemán, italiano y portugués. Se cambia en los ajustes del móvil (sección Idioma).</p>
 <h3>La llamada por Telegram no suena o tarda</h3>
 <p>Usa el servicio gratuito CallMeBot, que a veces pone las llamadas en cola o está saturado. Pon el <strong>@usuario</strong> de Telegram de cada contacto (con el teléfono suele fallar), que cada contacto escriba <code>/start</code> a <code>@CallMeBot_txtbot</code> y que en Telegram → Privacidad → Llamadas permita llamadas a «Todos». Es un extra opcional: el aviso por mensaje de Telegram es lo principal.</p>
+
+<h3>¿Puedo recibir el aviso por WhatsApp?</h3>
+<p>Sí, como extra <strong>experimental y opcional</strong> (ajustes → WhatsApp). Usa el servicio gratuito no oficial CallMeBot, que puede tardar o fallar, y no tiene botón «Lo he visto» ni recordatorios. Cada contacto debe activarlo una vez guardando el número que indica callmebot.com y enviándole por WhatsApp «I allow callmebot to send me messages»; recibirá una clave numérica y la pondrás como <code>+34600111222:clave</code>. El mensaje lleva tu nombre y el enlace a tu ubicación, sin datos médicos. El aviso por Telegram sigue siendo el principal.</p>
 
 <h2>Contacto</h2>
 <p>Escribe a <strong>SuperIA.superintelligence@proton.me</strong> indicando el modelo de reloj y, si puedes, una captura de <em>Ajustes → Diagnóstico</em>.</p>

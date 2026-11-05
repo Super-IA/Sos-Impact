@@ -13,3 +13,5 @@ table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{border:1px soli
 .tbl{overflow-x:auto}
 code{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:1px 6px}
 footer{margin-top:40px;color:var(--mut);font-size:.9rem}
+.langs{margin:.4rem 0 1rem;font-size:.9rem}.langs a,.langs b{margin-right:.6rem}
+body{overflow-wrap:anywhere;hyphens:auto}td,th{overflow-wrap:anywhere}
