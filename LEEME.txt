@@ -1,14 +1,14 @@
 SUBIR A GITHUB PAGES (https://super-ia.github.io/Sos-Impact/)
 1. En el repositorio "Sos-Impact" de GitHub: Add file > Upload files.
 2. Arrastra TODO el contenido de esta carpeta a la raíz del repositorio, incluidas las carpetas
-   en, fr, de, it y pt (cada una con index.html, soporte.html y privacidad.html), más
+   en, fr, de, it, pt, ptbr, ja y nl (cada una con index.html, soporte.html y privacidad.html), más
    index.html, privacidad.html, soporte.html, style.css, icon.png y .nojekyll.
    (Si GitHub no deja arrastrar carpetas, entra en el zip y sube también su contenido.)
 3. Commit changes. En Settings > Pages, la rama debe ser main (o la que uses) y carpeta / (root).
 4. A los 1-2 minutos estarán en:
    https://super-ia.github.io/Sos-Impact/            (español)
-   https://super-ia.github.io/Sos-Impact/en/         (English)   y igual fr/ de/ it/ pt/
+   https://super-ia.github.io/Sos-Impact/en/         (English)   y igual fr/ de/ it/ pt/ ptbr/ ja/ nl/
    Política de privacidad para la tienda: .../privacidad.html (es) o .../en/privacidad.html (inglés)
 5. La app abre el enlace de privacidad y de guía en el idioma elegido en los ajustes.
 
-Los datos de contacto (Super-ia y SuperIA.superintelligence@proton.me) ya están puestos.
+Los datos de contacto (Super-ia y amazfit.sosimpact@gmail.com) ya están puestos.
