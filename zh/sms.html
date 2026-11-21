@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自动短信和电话 – SOS Impact</title><link rel="icon" href="../icon.png"><link rel="stylesheet" href="../style.css"></head>
+<body><main>
+<header class="top"><img src="../icon.png" alt="SOS Impact"><div><h1>自动短信和电话</h1><div class="mut">Android 分步指南（ntfy + MacroDroid）</div></div></header>
+<nav><a href="index.html">首页</a><a href="soporte.html">支持与入门</a><a href="privacidad.html">隐私政策</a></nav>
+<div class="langs"><a href="../sms.html" hreflang="es">Español</a> <a href="../en/sms.html" hreflang="en">English</a> <b>中文</b> <a href="../ar/sms.html" hreflang="ar">العربية</a></div>
+
+<div class="card warn"><strong>重要。</strong>这是一个 Android 附加功能，需要您自己设置和维护：它不是急救服务，也不能替代您当地的急救电话。它依赖网络、电量以及 Android 不关闭应用。使用前<strong>务必测试</strong>，并且在更新手机或更改电池设置后再次测试。</div>
+
+<h2>您将得到什么</h2>
+<p>当手表检测到跌倒或您按下 SOS 时，您的手机会自动向您选择的人发送一条<strong>包含一句话和您位置链接的短信</strong>（如果您愿意，还可以拨打电话）。手表本身无法发送短信（Zepp OS 不允许），因此路径是：手表 → 手机上的 Zepp 应用 → <strong>ntfy</strong>（推送警报）→ <strong>MacroDroid</strong> → 短信。</p>
+<div class="card"><strong>您需要：</strong>一部已安装 <strong>Zepp</strong> 应用并设置好 SOS Impact 的 Android 手机、免费的 <strong>ntfy</strong> 应用，以及 <strong>MacroDroid</strong> 应用（免费版足够用于一个宏）。在 iPhone 上无法自动发送短信：请改用 Telegram 或 ntfy。</div>
+
+<ol class="steps">
+<li><strong>在 SOS Impact 中启用 ntfy。</strong>在 Zepp 应用中打开 SOS Impact 的设置，找到 <em>ntfy 警报（可选）</em>框，点击<em>启用 ntfy</em>。会出现一个<strong>秘密主题</strong>，形如 <code>sosimpact-…</code>。点击<em>发送 ntfy 测试</em>，并确认显示“测试已发送到 ntfy”。复制该主题：您将在第 2 步和第 4 步中用到它。<strong>请勿公开</strong>：任何知道它的人都能读到您的警报。</li>
+
+<li><strong>安装 ntfy 应用并订阅。</strong>安装 <em>ntfy</em>（Google Play 或 F-Droid），点击 <strong>+</strong> 并输入第 1 步中的主题（服务器使用 ntfy.sh，除非您使用自己的服务器）。发送测试时必须收到一条通知。如果没有收到任何内容，请检查主题是否输入得完全一致。
+<figure><img src="../img/ntfy-suscribir.jpg" alt="在 ntfy 中订阅主题" loading="lazy"><figcaption>ntfy 的“订阅主题”界面（截图为西班牙语）：输入您的主题（此处已模糊处理），然后点击订阅。</figcaption></figure></li>
+
+<li><strong>在 ntfy 中打开“广播消息”。</strong>在 ntfy 中：⋮ → <em>设置</em> → 向下滚动到<em>广播消息</em>并<strong>启用</strong>它。不启用的话，ntfy 不会通知 MacroDroid。
+<figure><img src="../img/ntfy-broadcast.jpg" alt="已启用“广播消息”的 ntfy 设置" loading="lazy"><figcaption>ntfy 设置：已启用“广播消息”（截图为西班牙语）。</figcaption></figure></li>
+
+<li><strong>在 MacroDroid 中创建宏：触发器。</strong>宏 → <strong>+</strong> → 触发器 → <em>设备/应用</em> → <strong>收到 Intent</strong>。填写：
+<div class="tbl"><table><tr><th>字段</th><th>值</th></tr>
+<tr><td>操作（Action）</td><td><code>io.heckel.ntfy.MESSAGE_RECEIVED</code></td></tr>
+<tr><td>包名（如果出现该字段）</td><td><code>io.heckel.ntfy</code></td></tr>
+<tr><td>Intent 附加项 1 — 名称</td><td><code>topic</code></td></tr>
+<tr><td>Intent 附加项 1 — 要匹配的值</td><td>仅填写您的主题，例如 <code>sosimpact-abc123</code>（不要加“topic=”，也不要有空格）</td></tr>
+<tr><td>Intent 附加项 2 — 名称</td><td><code>title</code></td></tr>
+<tr><td>Intent 附加项 2 — 要匹配的值</td><td><code>*</code></td></tr>
+<tr><td>Intent 附加项 2 — 保存到变量</td><td>点击 <strong>+</strong> 并创建一个名为 <code>titulo</code> 的文本变量</td></tr></table></div>
+<p>最常见的错误是附加项名称填成了别的词，或者在值前面加上了 <code>topic=</code>：名称必须严格是 <code>topic</code>。</p>
+<figure><img src="../img/intent-extra.jpg" alt="MacroDroid 的“收到 Intent”界面，包含操作和一个 Intent 附加项" loading="lazy"><figcaption>MacroDroid 的“收到 Intent”界面（截图为西班牙语）。附加项名称（<code>topic</code>）和值（您的主题）填在这里；图中已将其模糊处理。</figcaption></figure></li>
+
+<li><strong>动作：发送短信。</strong>动作 → <strong>发送短信</strong>。选择联系人或输入号码，文本只填变量 <code>[lv=titulo]</code>：它已包含警报语句和您的位置链接（无位置时会写明位置不可用）。请用文本框的 <strong>“...”</strong> 按钮 → <em>本地变量</em> → <code>titulo</code> 插入；使用<strong>方括号</strong> <code>[ ]</code>，不要用花括号 <code>{ }</code>。您可以在前面加上自己的一句话。如果您愿意，可以在短信<em>之后</em>再添加一个拨打同一号码的<strong>通话</strong>动作。
+<figure><img src="../img/macro-lista.jpg" alt="包含“收到 Intent”触发器和若干动作的 Sos-impact 宏" loading="lazy"><figcaption>完成后的宏：“收到 Intent”触发器及其下方的动作（通话和短信），截图为西班牙语。联系人姓名已模糊处理。</figcaption></figure></li>
+
+<li><strong>授予权限。</strong>MacroDroid 会请求<em>短信</em>和<em>电话</em>权限：请接受。如果您不是通过 Google Play 安装的 MacroDroid，且 Android 阻止了这些权限，请前往手机设置 → 应用 → MacroDroid → ⋮，然后点击<em>允许受限设置</em>。</li>
+
+<li><strong>防止 Android 关闭这些应用。</strong>手机设置 → 应用 → <strong>ntfy</strong> 和 <strong>MacroDroid</strong> → 电池 → <em>无限制</em>（或“不优化”）。在某些品牌（小米、华为、三星……）上，还要启用“自启动”或“在最近任务中锁定”。在 ntfy 中，您可以将该主题静音，以免响铃两次（短信已经会提醒）。</li>
+
+<li><strong>测试。</strong>先用 SOS Impact 的<em>发送 ntfy 测试</em>按钮，再在手表上进行<strong>手动 SOS</strong>。必须收到带链接的短信。在 MacroDroid 中，该宏会显示“几秒前已执行”。请事先告知您的联系人您正在测试。</li>
+</ol>
+
+<h2>如果无法工作</h2>
+<div class="tbl"><table><tr><th>现象</th><th>检查内容</th></tr>
+<tr><td>宏显示“数小时前已执行”且不再变化</td><td>警报没有到达它：请检查第 3 步（广播）、第 4 步（附加项名称为 <code>topic</code>，值不带“topic=”，以及包名），并确认 ntfy 已订阅该主题。</td></tr>
+<tr><td>宏运行了但没有发送短信</td><td>短信权限（第 6 步）、SIM 卡有余额/可发短信、号码输入正确。</td></tr>
+<tr><td>短信里没有链接</td><td>警报没有携带位置（手表没有获得 GPS，或这是没有位置的 ntfy 测试）。短信仍会发送，并说明位置不可用。</td></tr>
+<tr><td>短信里显示文字 <code>{lv=titulo}</code></td><td>您输入了花括号而不是方括号。删除后用“...”按钮插入变量（会变成 <code>[lv=titulo]</code>）。</td></tr>
+<tr><td>能用一段时间，然后就不行了</td><td>Android 让这些应用进入了休眠：请检查第 7 步并再次测试。</td></tr>
+<tr><td>我想停止使用</td><td>在 SOS Impact 中点击<em>停用 ntfy</em>，并删除 ntfy 中的宏和订阅。</td></tr></table></div>
+
+<h2>隐私</h2>
+<p>ntfy 警报经由 ntfy.sh 服务器（或您自己的服务器）传输，其唯一的“密码”就是秘密主题：请勿分享，如果您认为它已泄露，请更换（停用 → 启用）。短信由您自己的手机通过您的运营商发送。为了更好地保护隐私，您可以使用自己的 ntfy 服务器（<em>ntfy 服务器</em>字段）。</p>
+<footer>© 2026 <a href="https://super-ia.es">Super-ia</a> · SOS Impact · <a href="privacidad.html">隐私政策</a></footer>
+</main></body></html>

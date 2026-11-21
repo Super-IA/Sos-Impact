@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>隐私政策 – SOS Impact</title><link rel="icon" href="../icon.png"><link rel="stylesheet" href="../style.css"></head>
+<body><main>
+<header class="top"><img src="../icon.png" alt="SOS Impact 图标"><div><h1>隐私政策</h1><div class="mut">SOS Impact · 最后更新：2026 年 11 月 5 日</div></div></header>
+<nav><a href="index.html">首页</a><a href="soporte.html">支持与入门</a><a href="privacidad.html">隐私政策</a></nav>
+<div class="langs"><a href="../privacidad.html" hreflang="es">Español</a> <a href="../en/privacidad.html" hreflang="en">English</a> <a href="../fr/privacidad.html" hreflang="fr">Français</a> <a href="../de/privacidad.html" hreflang="de">Deutsch</a> <a href="../it/privacidad.html" hreflang="it">Italiano</a> <a href="../pt/privacidad.html" hreflang="pt">Português</a> <a href="../ptbr/privacidad.html" hreflang="pt-BR">Português (Brasil)</a> <a href="../ja/privacidad.html" hreflang="ja">日本語</a> <a href="../nl/privacidad.html" hreflang="nl">Nederlands</a> <b>中文</b> <a href="../ar/privacidad.html" hreflang="ar">العربية</a></div>
+
+<h2>1. 数据控制者</h2>
+<p>数据控制者是 SOS Impact 的开发者 <strong>Super-ia</strong>。联系方式：<strong>amazfit.sosimpact@gmail.com</strong>。</p>
+
+<h2>2. 应用的功能</h2>
+<p>SOS Impact 是一款适用于 Zepp OS 手表（搭载 Zepp OS 3.0 或更高版本的 Amazfit）的应用，它会检测猛烈撞击之后的静止状态，如果您没有回应，就向您设置的 Telegram 联系人发送警报。</p>
+
+<h2>3. 处理的数据及目的</h2>
+<div class="tbl"><table>
+<tr><th>数据</th><th>目的</th><th>处理或存储的位置</th></tr>
+<tr><td>运动传感器数据（加速度计和陀螺仪）</td><td>检测撞击和静止</td><td>仅在您的手表上实时处理。不存储，也不发送。</td></tr>
+<tr><td>位置（手表 GPS）</td><td>在警报和后续更新中包含您的位置</td><td>仅在发出警报时发送到 Telegram。在手表上仅保留几分钟。</td></tr>
+<tr><td>心率和血氧（SpO₂）（由您的手表测量的健康数据；仅在有近期读数时）</td><td>将其包含在紧急警报中</td><td>仅在发出警报时发送到 Telegram。不会存储在您的手表、手机和 Telegram 之外。</td></tr>
+<tr><td>您填写的姓名和医疗信息（过敏、用药……）</td><td>将其包含在警报中</td><td>存储在手机的 Zepp 应用设置中。仅在发出警报时发送到 Telegram。</td></tr>
+<tr><td>姓名、您的位置链接，以及您的 WhatsApp 联系人的手机号和密钥（仅当您启用此可选的实验性功能时）</td><td>同时通过 WhatsApp 发送警报</td><td>仅在发出警报时发送到外部服务 CallMeBot，由其通过 WhatsApp 转发消息。它会收到您的姓名、带有您位置链接的警报文本，以及每位联系人的手机号和密钥：它不会收到心率或医疗数据。WhatsApp（Meta）也会按其自身条款处理该消息。</td></tr>
+<tr><td>Telegram 通话的姓名和联系人（仅当您启用此可选功能时）</td><td>给您的联系人打语音电话，朗读一条简短的警报</td><td>仅在发出警报时发送到外部服务 CallMeBot。它只会收到您的姓名、一句固定的话以及联系人的 @用户名或手机号：不会收到位置、心率或医疗数据。</td></tr>
+<tr><td>机器人令牌和您联系人的聊天 ID</td><td>发送警报</td><td>存储在手机的 Zepp 应用设置中。</td></tr>
+<tr><td>完整的警报文本（姓名、位置链接、心率、血氧和医疗信息）以及 ntfy 秘密主题（仅当您启用此可选功能时）</td><td>同时通过 ntfy 以推送通知的方式发送警报</td><td>仅在有警报时发送到 ntfy 服务器（ntfy.sh 或您自己的服务器）。任何知道该秘密主题或订阅了它的人都能读到警报：请勿分享。</td></tr>
+<tr><td>匿名付款标识、手表型号、安装日期和许可证状态</td><td>通过 KiezelPay 管理免费试用和付款</td><td>您的手机将其发送给 KiezelPay（api.kiezelpay.com）；许可证状态也会存储在您的手表上。</td></tr>
+<tr><td>使用设置和诊断日志（最近的检测事件、警报历史）</td><td>应用运行和检测调优</td><td>在您的手表和手机设置中。最多几十条事件。</td></tr>
+</table></div>
+
+<h2>4. 没有自有服务器</h2>
+<p>SOS Impact <strong>没有自有服务器</strong>。开发者不会接收、查看或存储您的数据，也不使用任何分析、广告或跟踪工具。数据从您的手表传到手机（通过蓝牙，经由 Zepp 应用），再从手机传到 Telegram。</p>
+<p>唯一的例外是付款。试用和许可证由第三方服务 <strong>KiezelPay</strong> 处理。您的手机会向它发送随机生成的匿名标识、您的手表型号和安装日期（并且和任何互联网连接一样，还有您的 IP 地址）。它绝不会收到您的警报、位置或医疗数据。付款在 www.kzl.io 进行，适用 KiezelPay 的隐私政策。</p>
+
+<h2>5. 第三方</h2>
+<ul>
+<li><strong>Telegram</strong>（Telegram Messenger Inc. / Telegram FZ-LLC）接收警报并将其送达您的联系人，并按其自身的隐私政策处理：<a href="https://telegram.org/privacy">telegram.org/privacy</a>。</li>
+<li><strong>CallMeBot</strong>（仅当您启用 Telegram 通话或 WhatsApp 警报时）：拨打语音电话或通过 WhatsApp 转发消息的外部服务。它会收到您的姓名、一句固定的话或带有您位置链接的警报文本，以及您联系人的用户名或手机号。其政策：<a href="https://www.callmebot.com">callmebot.com</a>。</li>
+<li><strong>ntfy</strong>（ntfy.sh，仅当您启用 ntfy 警报时）：推送通知服务。它会收到完整的警报文本和主题名称，并将其送达订阅该主题的人；它按其自身政策处理：<a href="https://ntfy.sh">ntfy.sh</a>。您可以使用自己的 ntfy 服务器。</li>
+<li><strong>KiezelPay</strong>（kiezelpay.com）：处理免费试用和一次性付款。它会收到一个匿名标识、手表型号和安装日期，并按其自身的隐私政策处理付款。</li>
+<li><strong>Zepp Health / Amazfit</strong>：应用运行在手表和 Zepp 应用内，它们按各自的政策处理数据。</li>
+<li>您的联系人会收到您的位置、姓名和医疗数据。请告知您添加的人。</li>
+</ul>
+
+<h2>6. 法律依据</h2>
+<p>处理基于您的<strong>明确同意</strong>（GDPR 第 6(1)(a) 条，对于您选择附带的任何健康信息，则为第 9(2)(a) 条），您通过在设置中勾选接受复选框来表示同意。您可以随时取消勾选来撤回同意，此后应用将停止监测和发送警报；也可以通过卸载应用来撤回。</p>
+
+<h2>7. 保存期限与删除</h2>
+<p>数据会一直保留在您的手表和手机上，直到您将其删除或卸载应用。发送到 Telegram 的消息按 Telegram 的规定保留；您可以在其应用中删除它们。</p>
+
+<h2>8. 您的权利</h2>
+<p>您可以通过写信至 <strong>amazfit.sosimpact@gmail.com</strong> 行使您的访问权、更正权、删除权、反对权、限制处理权和可携带权。由于开发者不存储您的数据，您可以直接在手表、手机和 Telegram 上控制其中的大部分数据。您可以向您所在国家的数据保护机构提出投诉（在西班牙为 <a href="https://www.aepd.es">AEPD</a>）。</p>
+
+<h2>9. 安全</h2>
+<p>您的机器人令牌存储在手机设置中：请勿分享。与 Telegram 的通信使用 HTTPS。没有任何系统是万无一失的。</p>
+
+<h2>10. 未成年人</h2>
+<p>未经其母亲、父亲或监护人的监督，本应用不适合 14 岁以下的儿童使用。</p>
+
+<h2>11. 使用须知</h2>
+<p>SOS Impact <strong>不是医疗设备，也不是经过认证的安全设备</strong>。它不保证能检测到每一次跌倒，也不保证警报一定送达（这取决于手表、电量、手机、信号覆盖、GPS 和 Telegram）。它不会呼叫急救服务：遇到紧急情况，请拨打 <strong>112</strong>（西班牙和欧盟的急救电话；在其他地区请拨打当地急救电话，例如中国 120）。</p>
+
+<h2>12. 变更</h2>
+<p>如果本政策发生变更，将在此处更新并标注新的日期；如果变更较为重要，将再次征求您的同意。</p>
+
+<footer>© 2026 <a href="https://super-ia.es">Super-ia</a> · SOS Impact · <a href="index.html">首页</a> · <a href="soporte.html">支持</a></footer>
+</main></body></html>
