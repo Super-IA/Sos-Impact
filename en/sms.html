@@ -29,7 +29,8 @@
 <tr><td>Intent Extra 1 — value to match</td><td>only your topic, e.g. <code>sosimpact-abc123</code> (no "topic=" and no spaces)</td></tr>
 <tr><td>Intent Extra 2 — name</td><td><code>title</code></td></tr>
 <tr><td>Intent Extra 2 — value to match</td><td><code>*</code></td></tr>
-<tr><td>Intent Extra 2 — save to variable</td><td>tap <strong>+</strong> and create a text variable called <code>titulo</code></td></tr></table></div>
+<tr><td>Intent Extra 2 — save to variable</td><td>tap <strong>+</strong> and create a text variable called <code>titulo</code></td></tr><tr><td>Intent Extra 3 — name</td><td><code>tags</code></td></tr>
+<tr><td>Intent Extra 3 — value to match</td><td><code>*sos*</code> (so the macro only fires for the first alert, not for the follow-up messages: reminder, location update, battery…)</td></tr></table></div>
 <p>The most common mistake is typing a different word as the extra name, or putting <code>topic=</code> in front of the value: the name must be exactly <code>topic</code>.</p>
 <figure><img src="../img/intent-extra.jpg" alt="MacroDroid Intent Received screen with the action and one Intent Extra" loading="lazy"><figcaption>MacroDroid "Intent Received" screen (in Spanish). The extra name (<code>topic</code>) and value (your topic) go here; they are blurred in the image.</figcaption></figure></li>
 
