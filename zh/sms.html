@@ -29,7 +29,8 @@
 <tr><td>Intent 附加项 1 — 要匹配的值</td><td>仅填写您的主题，例如 <code>sosimpact-abc123</code>（不要加“topic=”，也不要有空格）</td></tr>
 <tr><td>Intent 附加项 2 — 名称</td><td><code>title</code></td></tr>
 <tr><td>Intent 附加项 2 — 要匹配的值</td><td><code>*</code></td></tr>
-<tr><td>Intent 附加项 2 — 保存到变量</td><td>点击 <strong>+</strong> 并创建一个名为 <code>titulo</code> 的文本变量</td></tr></table></div>
+<tr><td>Intent 附加项 2 — 保存到变量</td><td>点击 <strong>+</strong> 并创建一个名为 <code>titulo</code> 的文本变量</td></tr><tr><td>Intent 附加项 3 — 名称</td><td><code>tags</code></td></tr>
+<tr><td>Intent 附加项 3 — 匹配值</td><td><code>*sos*</code>（这样宏只会在首次警报时触发，而不会被后续消息触发：提醒、位置更新、电量等）</td></tr></table></div>
 <p>最常见的错误是附加项名称填成了别的词，或者在值前面加上了 <code>topic=</code>：名称必须严格是 <code>topic</code>。</p>
 <figure><img src="../img/intent-extra.jpg" alt="MacroDroid 的“收到 Intent”界面，包含操作和一个 Intent 附加项" loading="lazy"><figcaption>MacroDroid 的“收到 Intent”界面（截图为西班牙语）。附加项名称（<code>topic</code>）和值（您的主题）填在这里；图中已将其模糊处理。</figcaption></figure></li>
 
