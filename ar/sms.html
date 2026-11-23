@@ -13,7 +13,7 @@
 <div class="card"><strong>ما تحتاج إليه:</strong> هاتف Android عليه تطبيق <strong>Zepp</strong> مع SOS Impact مضبوطًا، وتطبيق <strong>ntfy</strong> المجاني، وتطبيق <strong>MacroDroid</strong> (تكفي النسخة المجانية لماكرو واحد). على iPhone لا يمكن أتمتة رسائل SMS: استخدم هناك تيليجرام أو ntfy.</div>
 
 <ol class="steps">
-<li><strong>فعّل ntfy في SOS Impact.</strong> في تطبيق Zepp افتح إعدادات SOS Impact، وابحث عن مربع <em>تنبيه ntfy</em> واضغط <em>تفعيل ntfy</em>. سيظهر <strong>موضوع سري</strong> يشبه <code>sosimpact-…</code>. اضغط <em>إرسال اختبار ntfy</em> وتأكد من ظهور «تم إرسال الاختبار إلى ntfy». انسخ الموضوع: ستستخدمه في الخطوتين 2 و4. <strong>لا تنشره</strong>: فأي شخص يعرفه يستطيع قراءة تنبيهاتك.</li>
+<li><strong>فعّل ntfy في SOS Impact.</strong> في تطبيق Zepp افتح إعدادات SOS Impact، وابحث عن مربع <em>تنبيه ntfy</em> واضغط <em>تفعيل ntfy</em>. سيظهر <strong>موضوع سري</strong> يشبه <code>sosimpact-…</code>. اضغط <em>إرسال اختبار ntfy</em> وتأكد من ظهور «تم إرسال الاختبار إلى ntfy». انسخ الموضوع: ستستخدمه في الخطوتين 2 و4. <strong>لا تنشره</strong>: فأي شخص يعرفه يستطيع قراءة تنبيهاتك.<figure><img src="../img/app-ntfy.jpg" alt="مربع تنبيه ntfy في إعدادات SOS Impact" loading="lazy"><figcaption>إعدادات SOS Impact في تطبيق Zepp: مربع «تنبيه ntfy» مع الموضوع السري وزر «إرسال اختبار عبر ntfy». (صورة توضيحية.)</figcaption></figure></li>
 
 <li><strong>ثبّت تطبيق ntfy واشترك فيه.</strong> ثبّت <em>ntfy</em> (من Google Play أو F-Droid)، واضغط <strong>+</strong> واكتب الموضوع من الخطوة 1 (الخادم ntfy.sh ما لم تستخدم خادمك الخاص). يجب أن يصل إشعار عند إرسال الاختبار. وإذا لم يصل شيء فتأكد من أن الموضوع مكتوب مطابقًا تمامًا.
 <figure><img src="../img/ntfy-suscribir.jpg" alt="الاشتراك في موضوع في ntfy" loading="lazy"><figcaption>شاشة «الاشتراك في موضوع» في ntfy (اللقطة باللغة الإسبانية): اكتب موضوعك (مموّه هنا) واضغط اشتراك.</figcaption></figure></li>
@@ -28,13 +28,13 @@
 <tr><td>Intent Extra 1 — الاسم</td><td><code>topic</code></td></tr>
 <tr><td>Intent Extra 1 — القيمة المطلوب مطابقتها</td><td>موضوعك فقط، مثل <code>sosimpact-abc123</code> (دون «topic=» ودون مسافات)</td></tr>
 <tr><td>Intent Extra 2 — الاسم</td><td><code>title</code></td></tr>
-<tr><td>Intent Extra 2 — القيمة المطلوب مطابقتها</td><td><code>*</code></td></tr>
-<tr><td>Intent Extra 2 — الحفظ في متغيّر</td><td>اضغط <strong>+</strong> وأنشئ متغيّرًا نصيًا اسمه <code>titulo</code></td></tr><tr><td>Intent Extra 3 — الاسم</td><td><code>tags</code></td></tr>
-<tr><td>Intent Extra 3 — القيمة المطابقة</td><td><code>*sos*</code> (لكي يعمل الماكرو مع التنبيه الأول فقط وليس مع الرسائل اللاحقة: التذكير، تحديث الموقع، البطارية…)</td></tr></table></div>
+<tr><td>Intent Extra 2 — القيمة المطلوب مطابقتها</td><td><code>?*</code> (حرف واحد على الأقل: لكي يعمل الماكرو مع التنبيه الأول الذي له عنوان فقط وليس مع الرسائل اللاحقة)</td></tr>
+<tr><td>Intent Extra 2 — الحفظ في متغيّر</td><td>اضغط <strong>+</strong> وأنشئ متغيّرًا نصيًا اسمه <code>titulo</code></td></tr></table></div>
 <p>الخطأ الأكثر شيوعًا هو كتابة كلمة أخرى كاسم للـ Extra، أو وضع <code>topic=</code> قبل القيمة: يجب أن يكون الاسم <code>topic</code> تمامًا.</p>
-<figure><img src="../img/intent-extra.jpg" alt="شاشة Intent Received في MacroDroid مع الإجراء وIntent Extra واحد" loading="lazy"><figcaption>شاشة «Intent Received» في MacroDroid (اللقطة باللغة الإسبانية). يوضع هنا اسم الـ Extra (<code>topic</code>) وقيمته (موضوعك)؛ وهما مموّهان في الصورة.</figcaption></figure></li>
+<figure><img src="../img/macro-extras.jpg" alt="شاشة Intent مستلم في MacroDroid مع إضافتي topic وtitle" loading="lazy"><figcaption>شاشة «Intent مستلم» مع الإضافتين: <code>topic</code> بموضوعك و<code>title</code> محفوظ في المتغير <code>titulo</code>. اكتب في قيمة <code>title</code> العلامة <code>?*</code> (حرف واحد على الأقل)؛ وإذا كتبت <code>*</code> فقط كما في هذه الصورة التوضيحية فسيعمل الماكرو أيضًا مع الرسائل اللاحقة. اترك خيار «تفعيل المطابقة بالتعبيرات النمطية» غير محدد. (صورة توضيحية.)</figcaption></figure></li>
 
 <li><strong>الإجراء: إرسال رسالة SMS.</strong> Actions ← <strong>Send SMS</strong>. اختر جهة الاتصال أو اكتب الرقم، وكنص ضع المتغيّر فقط <code>[lv=titulo]</code>: فهو يحتوي أصلًا على جملة التنبيه ورابط موقعك (أو يذكر أن الموقع غير متاح). أدرجه بزر <strong>«...»</strong> في حقل النص ← <em>Local variables</em> ← <code>titulo</code>؛ يُكتب بين <strong>أقواس مربعة</strong> <code>[ ]</code> لا معقوفة <code>{ }</code>. يمكنك إضافة جملة من عندك قبله. وإن شئت أضف إجراء <strong>Call</strong> إلى الرقم نفسه <em>بعد</em> رسالة SMS.
+<figure><img src="../img/macro-sms.jpg" alt="إجراء إرسال SMS في MacroDroid بالنص [lv=titulo]" loading="lazy"><figcaption>إجراء «إرسال SMS»: اختر <strong>الشريحة التي لديها تغطية</strong> (إذا اخترت شريحة «بدون خدمة» فسيفشل الإرسال)، واكتب الرقم، وكنص اكتب عبارتك متبوعة بـ <code>[lv=titulo]</code>. (صورة توضيحية؛ الرقم مخفي.)</figcaption></figure>
 <figure><img src="../img/macro-lista.jpg" alt="ماكرو Sos-impact بمشغّل Intent Received وإجراءات" loading="lazy"><figcaption>الماكرو بعد اكتماله: مشغّل «Intent Received» والإجراءات تحته (مكالمة ورسالة SMS)، واللقطة باللغة الإسبانية. اسم جهة الاتصال مموّه.</figcaption></figure></li>
 
 <li><strong>امنح الأذونات.</strong> سيطلب MacroDroid إذن <em>SMS</em> و<em>الهاتف</em>: وافق. وإذا ثبّتّ MacroDroid من خارج Google Play وحظرها Android، فاذهب إلى إعدادات الهاتف ← التطبيقات ← MacroDroid ← ⋮ واضغط <em>Allow restricted settings</em> (السماح بالإعدادات المقيّدة).</li>
@@ -51,7 +51,7 @@
 <tr><td>رسالة SMS بلا رابط</td><td>لم يحمل التنبيه موقعًا (لم تحصل الساعة على GPS، أو هو اختبار ntfy الذي لا يحمل موقعًا). تُرسل الرسالة رغم ذلك وتذكر أن الموقع غير متاح.</td></tr>
 <tr><td>تظهر في الرسالة العبارة <code>{lv=titulo}</code></td><td>كتبتَ أقواسًا معقوفة بدل المربعة. احذفها وأدرج المتغيّر بزر «...» (يصبح <code>[lv=titulo]</code>).</td></tr>
 <tr><td>يعمل لفترة ثم يتوقف</td><td>يضع Android التطبيقات في وضع السكون: تحقق من الخطوة 7 وأعد الاختبار.</td></tr>
-<tr><td>أريد التوقف عن استخدامه</td><td>في SOS Impact اضغط <em>إيقاف ntfy</em> واحذف الماكرو والاشتراك في ntfy.</td></tr></table></div>
+<tr><td>أريد التوقف عن استخدامه</td><td>في SOS Impact اضغط <em>إيقاف ntfy</em> واحذف الماكرو والاشتراك في ntfy.</td></tr><tr><td>خطأ «sms sending» عند اختبار الإجراء</td><td>اختر في الإجراء الشريحة التي لديها تغطية (وليس شريحة «بدون خدمة»). جرّب نصًا ثابتًا مثل «تجربة»؛ فإذا نجح فالمشكلة في نص المتغير.</td></tr></table></div>
 
 <h2>الخصوصية</h2>
 <p>يمر تنبيه ntfy عبر خادم ntfy.sh (أو خادمك) والموضوع السري هو «كلمة المرور» الوحيدة: لا تشاركه، وغيّره (إيقاف ← تفعيل) إذا ظننت أنه تسرّب. وتُرسل رسالة SMS من هاتفك نفسه عبر مشغّل الاتصالات الخاص بك. ولمزيد من الخصوصية يمكنك استخدام خادم ntfy خاص بك (حقل <em>خادم ntfy</em>).</p>
