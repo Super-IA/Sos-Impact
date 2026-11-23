@@ -13,7 +13,7 @@
 <div class="card"><strong>您需要：</strong>一部已安装 <strong>Zepp</strong> 应用并设置好 SOS Impact 的 Android 手机、免费的 <strong>ntfy</strong> 应用，以及 <strong>MacroDroid</strong> 应用（免费版足够用于一个宏）。在 iPhone 上无法自动发送短信：请改用 Telegram 或 ntfy。</div>
 
 <ol class="steps">
-<li><strong>在 SOS Impact 中启用 ntfy。</strong>在 Zepp 应用中打开 SOS Impact 的设置，找到 <em>ntfy 警报（可选）</em>框，点击<em>启用 ntfy</em>。会出现一个<strong>秘密主题</strong>，形如 <code>sosimpact-…</code>。点击<em>发送 ntfy 测试</em>，并确认显示“测试已发送到 ntfy”。复制该主题：您将在第 2 步和第 4 步中用到它。<strong>请勿公开</strong>：任何知道它的人都能读到您的警报。</li>
+<li><strong>在 SOS Impact 中启用 ntfy。</strong>在 Zepp 应用中打开 SOS Impact 的设置，找到 <em>ntfy 警报（可选）</em>框，点击<em>启用 ntfy</em>。会出现一个<strong>秘密主题</strong>，形如 <code>sosimpact-…</code>。点击<em>发送 ntfy 测试</em>，并确认显示“测试已发送到 ntfy”。复制该主题：您将在第 2 步和第 4 步中用到它。<strong>请勿公开</strong>：任何知道它的人都能读到您的警报。<figure><img src="../img/app-ntfy.jpg" alt="SOS Impact 设置中的 ntfy 提醒框" loading="lazy"><figcaption>Zepp 应用中的 SOS Impact 设置：显示秘密主题的“ntfy 提醒”框和“通过 ntfy 发送测试”按钮。（示例图片。）</figcaption></figure></li>
 
 <li><strong>安装 ntfy 应用并订阅。</strong>安装 <em>ntfy</em>（Google Play 或 F-Droid），点击 <strong>+</strong> 并输入第 1 步中的主题（服务器使用 ntfy.sh，除非您使用自己的服务器）。发送测试时必须收到一条通知。如果没有收到任何内容，请检查主题是否输入得完全一致。
 <figure><img src="../img/ntfy-suscribir.jpg" alt="在 ntfy 中订阅主题" loading="lazy"><figcaption>ntfy 的“订阅主题”界面（截图为西班牙语）：输入您的主题（此处已模糊处理），然后点击订阅。</figcaption></figure></li>
@@ -28,13 +28,13 @@
 <tr><td>Intent 附加项 1 — 名称</td><td><code>topic</code></td></tr>
 <tr><td>Intent 附加项 1 — 要匹配的值</td><td>仅填写您的主题，例如 <code>sosimpact-abc123</code>（不要加“topic=”，也不要有空格）</td></tr>
 <tr><td>Intent 附加项 2 — 名称</td><td><code>title</code></td></tr>
-<tr><td>Intent 附加项 2 — 要匹配的值</td><td><code>*</code></td></tr>
-<tr><td>Intent 附加项 2 — 保存到变量</td><td>点击 <strong>+</strong> 并创建一个名为 <code>titulo</code> 的文本变量</td></tr><tr><td>Intent 附加项 3 — 名称</td><td><code>tags</code></td></tr>
-<tr><td>Intent 附加项 3 — 匹配值</td><td><code>*sos*</code>（这样宏只会在首次警报时触发，而不会被后续消息触发：提醒、位置更新、电量等）</td></tr></table></div>
+<tr><td>Intent 附加项 2 — 要匹配的值</td><td><code>?*</code>（至少一个字符：这样宏只在带标题的首次警报时触发，而不会被后续消息触发）</td></tr>
+<tr><td>Intent 附加项 2 — 保存到变量</td><td>点击 <strong>+</strong> 并创建一个名为 <code>titulo</code> 的文本变量</td></tr></table></div>
 <p>最常见的错误是附加项名称填成了别的词，或者在值前面加上了 <code>topic=</code>：名称必须严格是 <code>topic</code>。</p>
-<figure><img src="../img/intent-extra.jpg" alt="MacroDroid 的“收到 Intent”界面，包含操作和一个 Intent 附加项" loading="lazy"><figcaption>MacroDroid 的“收到 Intent”界面（截图为西班牙语）。附加项名称（<code>topic</code>）和值（您的主题）填在这里；图中已将其模糊处理。</figcaption></figure></li>
+<figure><img src="../img/macro-extras.jpg" alt="MacroDroid 的“收到 Intent”界面，含 topic 和 title 附加项" loading="lazy"><figcaption>“收到 Intent”界面及两个附加项：<code>topic</code> 填你的主题，<code>title</code> 保存到变量 <code>titulo</code>。<code>title</code> 的匹配值请填 <code>?*</code>（至少一个字符）；如果像本示例图那样只填 <code>*</code>，后续消息也会触发宏。请不要勾选“启用正则表达式匹配”。（示例图片。）</figcaption></figure></li>
 
 <li><strong>动作：发送短信。</strong>动作 → <strong>发送短信</strong>。选择联系人或输入号码，文本只填变量 <code>[lv=titulo]</code>：它已包含警报语句和您的位置链接（无位置时会写明位置不可用）。请用文本框的 <strong>“...”</strong> 按钮 → <em>本地变量</em> → <code>titulo</code> 插入；使用<strong>方括号</strong> <code>[ ]</code>，不要用花括号 <code>{ }</code>。您可以在前面加上自己的一句话。如果您愿意，可以在短信<em>之后</em>再添加一个拨打同一号码的<strong>通话</strong>动作。
+<figure><img src="../img/macro-sms.jpg" alt="MacroDroid 的发送短信动作，文本为 [lv=titulo]" loading="lazy"><figcaption>“发送短信”动作：请选择<strong>有信号的 SIM 卡</strong>（若选择显示“无服务”的卡，短信会发送失败），输入号码，文本填你自己的话加上 <code>[lv=titulo]</code>。（示例图片；号码已隐藏。）</figcaption></figure>
 <figure><img src="../img/macro-lista.jpg" alt="包含“收到 Intent”触发器和若干动作的 Sos-impact 宏" loading="lazy"><figcaption>完成后的宏：“收到 Intent”触发器及其下方的动作（通话和短信），截图为西班牙语。联系人姓名已模糊处理。</figcaption></figure></li>
 
 <li><strong>授予权限。</strong>MacroDroid 会请求<em>短信</em>和<em>电话</em>权限：请接受。如果您不是通过 Google Play 安装的 MacroDroid，且 Android 阻止了这些权限，请前往手机设置 → 应用 → MacroDroid → ⋮，然后点击<em>允许受限设置</em>。</li>
@@ -51,7 +51,7 @@
 <tr><td>短信里没有链接</td><td>警报没有携带位置（手表没有获得 GPS，或这是没有位置的 ntfy 测试）。短信仍会发送，并说明位置不可用。</td></tr>
 <tr><td>短信里显示文字 <code>{lv=titulo}</code></td><td>您输入了花括号而不是方括号。删除后用“...”按钮插入变量（会变成 <code>[lv=titulo]</code>）。</td></tr>
 <tr><td>能用一段时间，然后就不行了</td><td>Android 让这些应用进入了休眠：请检查第 7 步并再次测试。</td></tr>
-<tr><td>我想停止使用</td><td>在 SOS Impact 中点击<em>停用 ntfy</em>，并删除 ntfy 中的宏和订阅。</td></tr></table></div>
+<tr><td>我想停止使用</td><td>在 SOS Impact 中点击<em>停用 ntfy</em>，并删除 ntfy 中的宏和订阅。</td></tr><tr><td>测试动作时出现“sms sending”错误</td><td>在动作中选择有信号的 SIM 卡（不要选“无服务”的卡）。先用固定文本（如“测试”）试一下；如果成功，问题就出在变量文本上。</td></tr></table></div>
 
 <h2>隐私</h2>
 <p>ntfy 警报经由 ntfy.sh 服务器（或您自己的服务器）传输，其唯一的“密码”就是秘密主题：请勿分享，如果您认为它已泄露，请更换（停用 → 启用）。短信由您自己的手机通过您的运营商发送。为了更好地保护隐私，您可以使用自己的 ntfy 服务器（<em>ntfy 服务器</em>字段）。</p>
