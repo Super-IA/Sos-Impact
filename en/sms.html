@@ -6,6 +6,7 @@
 <nav><a href="index.html">Home</a><a href="soporte.html">Support and first steps</a><a href="privacidad.html">Privacy policy</a></nav>
 <div class="langs"><a href="../sms.html" hreflang="es">Español</a> <b>English</b> <a href="../zh/sms.html" hreflang="zh-Hans">中文</a> <a href="../ar/sms.html" hreflang="ar">العربية</a></div>
 
+<div class="card"><strong>Easier:</strong> use the <a href="puente.html"><strong>SOS Impact Bridge</strong></a> app, which replaces ntfy + MacroDroid: you only type the topic and the phone number and it sends the SMS automatically. This MacroDroid manual still works if you prefer it.</div>
 <div class="card warn"><strong>Important.</strong> This is an Android extra that you set up and maintain: it is not an emergency service and does not replace your local emergency number. It depends on internet, battery and Android not closing apps. <strong>Always test it</strong> before relying on it, and test again after updating your phone or changing battery settings.</div>
 
 <h2>What you get</h2>
@@ -28,10 +29,10 @@
 <tr><td>Intent Extra 1 — name</td><td><code>topic</code></td></tr>
 <tr><td>Intent Extra 1 — value to match</td><td>only your topic, e.g. <code>sosimpact-abc123</code> (no "topic=" and no spaces)</td></tr>
 <tr><td>Intent Extra 2 — name</td><td><code>title</code></td></tr>
-<tr><td>Intent Extra 2 — value to match</td><td><code>?*</code> (at least one character: so the macro only fires for the first alert, which has a title, and not for the follow-up messages)</td></tr>
+<tr><td>Intent Extra 2 — value to match</td><td><code>*</code> (any text). SOS Impact publishes only the first alert to ntfy, so you get a single SMS per fall; follow-up messages go through Telegram.</td></tr>
 <tr><td>Intent Extra 2 — save to variable</td><td>tap <strong>+</strong> and create a text variable called <code>titulo</code></td></tr></table></div>
 <p>The most common mistake is typing a different word as the extra name, or putting <code>topic=</code> in front of the value: the name must be exactly <code>topic</code>.</p>
-<figure><img src="../img/macro-extras.jpg" alt="MacroDroid Intent Received screen with the topic and title extras" loading="lazy"><figcaption>The “Intent Received” screen with the two extras: <code>topic</code> with your topic and <code>title</code> saved in the variable <code>titulo</code>. For the value of <code>title</code> type <code>?*</code> (at least one character); with just <code>*</code>, as in this example image, the macro would also fire for the follow-up messages. Leave “Enable regular expression matching” unchecked. (Example image.)</figcaption></figure></li>
+<figure><img src="../img/macro-extras.jpg" alt="MacroDroid Intent Received screen with the topic and title extras" loading="lazy"><figcaption>The “Intent Received” screen with the two extras: <code>topic</code> with your topic and <code>title</code> saved in the variable <code>titulo</code>. For the value of <code>title</code> type <code>*</code>. Leave “Enable regular expression matching” unchecked. (Example image.)</figcaption></figure></li>
 
 <li><strong>The action: send the SMS.</strong> Actions → <strong>Send SMS</strong>. Choose the contact or type the number and, as the text, just the variable <code>[lv=titulo]</code>: it already holds the alert sentence and your location link (or says the location is not available). Insert it with the <strong>"..."</strong> button of the text field → <em>Local variables</em> → <code>titulo</code>; it uses <strong>square brackets</strong> <code>[ ]</code>, not curly braces <code>{ }</code>. You can add your own sentence before it. If you like, add a <strong>Call</strong> action to the same number <em>after</em> the SMS.
 <figure><img src="../img/macro-sms.jpg" alt="MacroDroid Send SMS action with the text [lv=titulo]" loading="lazy"><figcaption>“Send SMS” action: choose the <strong>SIM that has coverage</strong> (if you pick one that says “No service” the SMS fails), type the number and, as the text, your own phrase followed by <code>[lv=titulo]</code>. (Example image; the number is hidden.)</figcaption></figure>

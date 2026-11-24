@@ -6,6 +6,7 @@
 <nav><a href="index.html">الرئيسية</a><a href="soporte.html">الدعم والخطوات الأولى</a><a href="privacidad.html">سياسة الخصوصية</a></nav>
 <div class="langs"><a href="../sms.html" hreflang="es">Español</a> <a href="../en/sms.html" hreflang="en">English</a> <a href="../zh/sms.html" hreflang="zh-Hans">中文</a> <b>العربية</b></div>
 
+<div class="card"><strong>أسهل:</strong> استخدم تطبيق <a href="../en/puente.html"><strong>SOS Impact Bridge</strong></a> (صفحة بالإنجليزية) الذي يغني عن ntfy + MacroDroid: تكتب الموضوع ورقم الهاتف فقط ويرسل الرسالة تلقائيًا. ويظل دليل MacroDroid هذا صالحًا إن فضلته.</div>
 <div class="card warn"><strong>مهم.</strong> هذه ميزة إضافية لـ Android تعدّها وتصونها بنفسك: وهي ليست خدمة طوارئ ولا تغني عن رقم الطوارئ المحلي في بلدك. وتعتمد على الإنترنت والبطارية وعلى ألا يغلق Android التطبيقات. <strong>اختبرها دائمًا</strong> قبل الاعتماد عليها، وأعد اختبارها بعد تحديث هاتفك أو تغيير إعدادات البطارية.</div>
 
 <h2>ماذا ستحصل عليه</h2>
@@ -28,10 +29,10 @@
 <tr><td>Intent Extra 1 — الاسم</td><td><code>topic</code></td></tr>
 <tr><td>Intent Extra 1 — القيمة المطلوب مطابقتها</td><td>موضوعك فقط، مثل <code>sosimpact-abc123</code> (دون «topic=» ودون مسافات)</td></tr>
 <tr><td>Intent Extra 2 — الاسم</td><td><code>title</code></td></tr>
-<tr><td>Intent Extra 2 — القيمة المطلوب مطابقتها</td><td><code>?*</code> (حرف واحد على الأقل: لكي يعمل الماكرو مع التنبيه الأول الذي له عنوان فقط وليس مع الرسائل اللاحقة)</td></tr>
+<tr><td>Intent Extra 2 — القيمة المطلوب مطابقتها</td><td><code>*</code> (أي نص). ينشر SOS Impact التنبيه الأول فقط في ntfy، لذلك تصلك رسالة SMS واحدة لكل سقوط؛ أما رسائل المتابعة فتُرسل عبر Telegram.</td></tr>
 <tr><td>Intent Extra 2 — الحفظ في متغيّر</td><td>اضغط <strong>+</strong> وأنشئ متغيّرًا نصيًا اسمه <code>titulo</code></td></tr></table></div>
 <p>الخطأ الأكثر شيوعًا هو كتابة كلمة أخرى كاسم للـ Extra، أو وضع <code>topic=</code> قبل القيمة: يجب أن يكون الاسم <code>topic</code> تمامًا.</p>
-<figure><img src="../img/macro-extras.jpg" alt="شاشة Intent مستلم في MacroDroid مع إضافتي topic وtitle" loading="lazy"><figcaption>شاشة «Intent مستلم» مع الإضافتين: <code>topic</code> بموضوعك و<code>title</code> محفوظ في المتغير <code>titulo</code>. اكتب في قيمة <code>title</code> العلامة <code>?*</code> (حرف واحد على الأقل)؛ وإذا كتبت <code>*</code> فقط كما في هذه الصورة التوضيحية فسيعمل الماكرو أيضًا مع الرسائل اللاحقة. اترك خيار «تفعيل المطابقة بالتعبيرات النمطية» غير محدد. (صورة توضيحية.)</figcaption></figure></li>
+<figure><img src="../img/macro-extras.jpg" alt="شاشة Intent مستلم في MacroDroid مع إضافتي topic وtitle" loading="lazy"><figcaption>شاشة «Intent مستلم» مع الإضافتين: <code>topic</code> بموضوعك و<code>title</code> محفوظ في المتغير <code>titulo</code>. اكتب في قيمة <code>title</code> العلامة <code>*</code>. اترك خيار «تفعيل المطابقة بالتعبيرات النمطية» غير محدد. (صورة توضيحية.)</figcaption></figure></li>
 
 <li><strong>الإجراء: إرسال رسالة SMS.</strong> Actions ← <strong>Send SMS</strong>. اختر جهة الاتصال أو اكتب الرقم، وكنص ضع المتغيّر فقط <code>[lv=titulo]</code>: فهو يحتوي أصلًا على جملة التنبيه ورابط موقعك (أو يذكر أن الموقع غير متاح). أدرجه بزر <strong>«...»</strong> في حقل النص ← <em>Local variables</em> ← <code>titulo</code>؛ يُكتب بين <strong>أقواس مربعة</strong> <code>[ ]</code> لا معقوفة <code>{ }</code>. يمكنك إضافة جملة من عندك قبله. وإن شئت أضف إجراء <strong>Call</strong> إلى الرقم نفسه <em>بعد</em> رسالة SMS.
 <figure><img src="../img/macro-sms.jpg" alt="إجراء إرسال SMS في MacroDroid بالنص [lv=titulo]" loading="lazy"><figcaption>إجراء «إرسال SMS»: اختر <strong>الشريحة التي لديها تغطية</strong> (إذا اخترت شريحة «بدون خدمة» فسيفشل الإرسال)، واكتب الرقم، وكنص اكتب عبارتك متبوعة بـ <code>[lv=titulo]</code>. (صورة توضيحية؛ الرقم مخفي.)</figcaption></figure>
