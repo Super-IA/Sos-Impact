@@ -6,6 +6,7 @@
 <nav><a href="index.html">Inicio</a><a href="soporte.html">Soporte y primeros pasos</a><a href="privacidad.html">Política de privacidad</a></nav>
 <div class="langs"><b>Español</b> <a href="en/sms.html" hreflang="en">English</a> <a href="zh/sms.html" hreflang="zh-Hans">中文</a> <a href="ar/sms.html" hreflang="ar">العربية</a></div>
 
+<div class="card"><strong>Más fácil:</strong> usa la app <a href="puente.html"><strong>SOS Impact Puente</strong></a>, que sustituye a ntfy + MacroDroid: solo pones el tema y el teléfono y manda el SMS automáticamente. Este manual con MacroDroid sigue valiendo si lo prefieres.</div>
 <div class="card warn"><strong>Importante.</strong> Es un extra para Android que tú montas y mantienes: no es un servicio de emergencias ni sustituye al 112. Depende de internet, de la batería y de que Android no cierre las apps. <strong>Pruébalo siempre</strong> antes de fiarte de él, y repite la prueba tras actualizar el móvil o cambiar ajustes de batería.</div>
 
 <h2>Qué conseguirás</h2>
@@ -28,10 +29,10 @@
 <tr><td>Intent Extra 1 — nombre</td><td><code>topic</code></td></tr>
 <tr><td>Intent Extra 1 — valor para coincidir</td><td>solo tu tema, p. ej. <code>sosimpact-abc123</code> (sin «topic=» ni espacios)</td></tr>
 <tr><td>Intent Extra 2 — nombre</td><td><code>title</code></td></tr>
-<tr><td>Intent Extra 2 — valor para coincidir</td><td><code>?*</code> (al menos un carácter: así la macro solo salta con la alerta inicial, que lleva título, y no con los avisos posteriores)</td></tr>
+<tr><td>Intent Extra 2 — valor para coincidir</td><td><code>*</code> (cualquier texto). SOS Impact publica en ntfy solo la alerta inicial, así que recibirás un único SMS por caída; los avisos de seguimiento van por Telegram.</td></tr>
 <tr><td>Intent Extra 2 — guardar en variable</td><td>pulsa <strong>+</strong> y crea una variable de texto llamada <code>titulo</code></td></tr></table></div>
 <p>El error más común es escribir el nombre del extra con otra palabra o poner <code>topic=</code> delante del valor: el nombre debe ser exactamente <code>topic</code>.</p>
-<figure><img src="img/macro-extras.jpg" alt="Pantalla Intent Recibido de MacroDroid con los extras topic y title" loading="lazy"><figcaption>Pantalla «Intent Recibido» con los dos extras: <code>topic</code> con tu tema y <code>title</code> guardado en la variable <code>titulo</code>. En el valor de <code>title</code> escribe <code>?*</code> (al menos un carácter); con solo <code>*</code>, como en esta imagen de ejemplo, la macro también saltaría con los avisos posteriores. Deja sin marcar «Activar la coincidencia de expresiones regulares». (Imagen de ejemplo.)</figcaption></figure></li>
+<figure><img src="img/macro-extras.jpg" alt="Pantalla Intent Recibido de MacroDroid con los extras topic y title" loading="lazy"><figcaption>Pantalla «Intent Recibido» con los dos extras: <code>topic</code> con tu tema y <code>title</code> guardado en la variable <code>titulo</code>. En el valor de <code>title</code> escribe <code>*</code>. Deja sin marcar «Activar la coincidencia de expresiones regulares». (Imagen de ejemplo.)</figcaption></figure></li>
 
 <li><strong>La acción: enviar el SMS.</strong> Acciones → <strong>Enviar SMS</strong>. Elige el contacto o escribe el número y como texto, solo la variable <code>[lv=titulo]</code>: ya contiene la frase de alerta y el enlace a tu ubicación (o «Ubicación no disponible»). Insértala con el botón <strong>«...»</strong> del campo de texto → <em>Variables locales</em> → <code>titulo</code>; escribe los <strong>corchetes</strong> <code>[ ]</code>, no llaves <code>{ }</code>. Puedes añadir tu propia frase delante. Si quieres, añade después otra acción <strong>Llamar</strong> al mismo número, <em>después</em> del SMS.
 <figure><img src="img/macro-sms.jpg" alt="Acción Enviar SMS de MacroDroid con el texto [lv=titulo]" loading="lazy"><figcaption>Acción «Enviar SMS»: elige la <strong>SIM que tenga cobertura</strong> (si eliges una «Sin servicio», el SMS falla), escribe el número y como texto tu frase seguida de <code>[lv=titulo]</code>. (Imagen de ejemplo; el número está tapado.)</figcaption></figure>

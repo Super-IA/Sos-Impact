@@ -16,3 +16,7 @@ Los datos de contacto (Super-ia y amazfit.sosimpact@gmail.com) ya están puestos
 NOVEDAD: sms.html y en/sms.html (manual SMS con ntfy + MacroDroid) y la carpeta img/ con sus capturas. Sube también img/.
 
 NOVEDAD 2: carpetas zh/ y ar/ (chino y árabe) con index, soporte, privacidad y sms; politica de privacidad actualizada con ntfy en todos los idiomas. Sube TODO (incluida img/) ANTES de publicar la app 1.2.0 en la tienda.
+
+
+APP «SOS Impact Puente» (puente.html y en/puente.html):
+Cuando compiles el APK, copia el archivo SOS-Impact-Puente.apk en la carpeta principal de la web (junto a index.html y puente.html) y súbelo a GitHub. Hasta entonces el enlace de descarga de puente.html no funcionará.

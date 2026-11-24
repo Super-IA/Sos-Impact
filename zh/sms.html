@@ -6,6 +6,7 @@
 <nav><a href="index.html">首页</a><a href="soporte.html">支持与入门</a><a href="privacidad.html">隐私政策</a></nav>
 <div class="langs"><a href="../sms.html" hreflang="es">Español</a> <a href="../en/sms.html" hreflang="en">English</a> <b>中文</b> <a href="../ar/sms.html" hreflang="ar">العربية</a></div>
 
+<div class="card"><strong>更简单：</strong>使用 <a href="../en/puente.html"><strong>SOS Impact Bridge</strong></a> 应用（英文页面），它可以取代 ntfy + MacroDroid：只需填写主题和电话号码，即可自动发送短信。如果你更喜欢，本 MacroDroid 手册依然有效。</div>
 <div class="card warn"><strong>重要。</strong>这是一个 Android 附加功能，需要您自己设置和维护：它不是急救服务，也不能替代您当地的急救电话。它依赖网络、电量以及 Android 不关闭应用。使用前<strong>务必测试</strong>，并且在更新手机或更改电池设置后再次测试。</div>
 
 <h2>您将得到什么</h2>
@@ -28,10 +29,10 @@
 <tr><td>Intent 附加项 1 — 名称</td><td><code>topic</code></td></tr>
 <tr><td>Intent 附加项 1 — 要匹配的值</td><td>仅填写您的主题，例如 <code>sosimpact-abc123</code>（不要加“topic=”，也不要有空格）</td></tr>
 <tr><td>Intent 附加项 2 — 名称</td><td><code>title</code></td></tr>
-<tr><td>Intent 附加项 2 — 要匹配的值</td><td><code>?*</code>（至少一个字符：这样宏只在带标题的首次警报时触发，而不会被后续消息触发）</td></tr>
+<tr><td>Intent 附加项 2 — 要匹配的值</td><td><code>*</code>（任意文本）。SOS Impact 只会把首次警报发布到 ntfy，因此每次跌倒只会收到一条短信；后续通知通过 Telegram 发送。</td></tr>
 <tr><td>Intent 附加项 2 — 保存到变量</td><td>点击 <strong>+</strong> 并创建一个名为 <code>titulo</code> 的文本变量</td></tr></table></div>
 <p>最常见的错误是附加项名称填成了别的词，或者在值前面加上了 <code>topic=</code>：名称必须严格是 <code>topic</code>。</p>
-<figure><img src="../img/macro-extras.jpg" alt="MacroDroid 的“收到 Intent”界面，含 topic 和 title 附加项" loading="lazy"><figcaption>“收到 Intent”界面及两个附加项：<code>topic</code> 填你的主题，<code>title</code> 保存到变量 <code>titulo</code>。<code>title</code> 的匹配值请填 <code>?*</code>（至少一个字符）；如果像本示例图那样只填 <code>*</code>，后续消息也会触发宏。请不要勾选“启用正则表达式匹配”。（示例图片。）</figcaption></figure></li>
+<figure><img src="../img/macro-extras.jpg" alt="MacroDroid 的“收到 Intent”界面，含 topic 和 title 附加项" loading="lazy"><figcaption>“收到 Intent”界面及两个附加项：<code>topic</code> 填你的主题，<code>title</code> 保存到变量 <code>titulo</code>。<code>title</code> 的匹配值请填 <code>*</code>。请不要勾选“启用正则表达式匹配”。（示例图片。）</figcaption></figure></li>
 
 <li><strong>动作：发送短信。</strong>动作 → <strong>发送短信</strong>。选择联系人或输入号码，文本只填变量 <code>[lv=titulo]</code>：它已包含警报语句和您的位置链接（无位置时会写明位置不可用）。请用文本框的 <strong>“...”</strong> 按钮 → <em>本地变量</em> → <code>titulo</code> 插入；使用<strong>方括号</strong> <code>[ ]</code>，不要用花括号 <code>{ }</code>。您可以在前面加上自己的一句话。如果您愿意，可以在短信<em>之后</em>再添加一个拨打同一号码的<strong>通话</strong>动作。
 <figure><img src="../img/macro-sms.jpg" alt="MacroDroid 的发送短信动作，文本为 [lv=titulo]" loading="lazy"><figcaption>“发送短信”动作：请选择<strong>有信号的 SIM 卡</strong>（若选择显示“无服务”的卡，短信会发送失败），输入号码，文本填你自己的话加上 <code>[lv=titulo]</code>。（示例图片；号码已隐藏。）</figcaption></figure>

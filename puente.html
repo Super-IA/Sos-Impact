@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOS Impact Puente – SMS automático</title><link rel="icon" href="icon.png"><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header class="top"><img src="icon.png" alt="SOS Impact"><div><h1>SOS Impact Puente</h1><div class="mut">App de Android que manda el SMS con tu ubicación cuando el reloj avisa</div></div></header>
+<nav><a href="index.html">Inicio</a><a href="soporte.html">Soporte y primeros pasos</a><a href="sms.html">Manual con MacroDroid</a><a href="privacidad.html">Política de privacidad</a></nav>
+<div class="langs"><b>Español</b> <a href="en/puente.html" hreflang="en">English</a></div>
+
+<div class="card warn"><strong>Importante.</strong> Es un extra para Android: no es un servicio de emergencias ni sustituye al 112. Depende de internet, de la batería y de que Android no cierre la app. <strong>Pruébalo siempre</strong> antes de fiarte de él.</div>
+
+<h2>Qué es</h2>
+<p><strong>SOS Impact Puente</strong> es una app gratuita para Android que sustituye a <em>ntfy + MacroDroid</em>. Se instala una sola app, se escribe el <strong>tema</strong> de ntfy y el <strong>teléfono</strong> que debe recibir el aviso, y ya está: cuando el reloj detecta una caída o pulsas SOS, tu móvil manda un <strong>SMS con la frase de alerta y el enlace de tu ubicación</strong>, automáticamente y una sola vez por alerta.</p>
+<div class="card"><strong>Necesitas:</strong> un móvil Android con las apps <strong>Zepp</strong> y <strong>SOS Impact</strong> configuradas y una tarjeta SIM con SMS. No hace falta instalar ntfy ni MacroDroid. En iPhone no se puede automatizar el SMS.</div>
+
+<h2>Instalación paso a paso</h2>
+<ol class="steps">
+<li><strong>Activa ntfy en SOS Impact.</strong> En la app Zepp abre los ajustes de SOS Impact, busca el cuadro <em>Aviso por ntfy</em> y pulsa <em>Activar ntfy</em>. Aparece un <strong>tema secreto</strong> (<code>sosimpact-…</code>). Cópialo y <strong>no lo publiques</strong>.
+<figure><img src="img/app-ntfy.jpg" alt="Cuadro Aviso por ntfy en los ajustes de SOS Impact" loading="lazy"><figcaption>Cuadro «Aviso por ntfy» de los ajustes de SOS Impact: aquí está el tema secreto. (Imagen de ejemplo.)</figcaption></figure></li>
+
+<li><strong>Descarga e instala la app.</strong> Descarga <a href="SOS-Impact-Puente.apk"><strong>SOS-Impact-Puente.apk</strong></a> desde el móvil. Android pedirá permiso para <em>instalar apps de orígenes desconocidos</em> (es normal: la app no está en Google Play porque Play no permite que una app envíe SMS). Acepta e instala.</li>
+
+<li><strong>Escribe el tema y el teléfono.</strong> Abre <em>SOS Impact Puente</em>, pega el tema (o el enlace completo) y escribe el teléfono que recibirá el SMS, con prefijo (por ejemplo <code>+34600111222</code>). Puedes poner hasta tres teléfonos y, si quieres, un texto que se añade delante (por ejemplo tu nombre).</li>
+
+<li><strong>Llamadas (opcional).</strong> Marca «Llamar también al primer teléfono (después del SMS)» si quieres que, tras el SMS, el móvil llame al primer número. Android pedirá el permiso de <em>llamadas</em> y, para poder llamar con el móvil bloqueado o con otra app abierta, el permiso <em>Mostrar sobre otras apps</em>: acéptalos. Usa antes el botón <em>Llamada de prueba</em>.</li>
+
+<li><strong>Pulsa «Activar vigilancia».</strong> Android pedirá permiso para <em>enviar SMS</em> y para <em>notificaciones</em>: acepta los dos. Después te pedirá quitar la restricción de batería: acéptalo también, es lo que mantiene la app despierta.</li>
+
+<li><strong>Ajustes del fabricante (Xiaomi, Huawei, Oppo…).</strong> Pulsa <em>Permisos y batería</em> y permite el <strong>inicio automático</strong> de la app. En Xiaomi, además, en Ajustes → Aplicaciones → Permisos → <em>Otros permisos</em> deja «Enviar mensajes SMS» en <strong>Permitir</strong>, y fija la app con el candado en la pantalla de aplicaciones recientes para que el limpiador no la cierre.</li>
+
+<li><strong>Pruébalo.</strong> Pulsa <em>Enviar SMS de prueba</em>: debe llegar un SMS al teléfono. Después, en los ajustes de SOS Impact (app Zepp) pulsa <em>Enviar prueba por ntfy</em>: debe llegar otro SMS con el texto de prueba. Por último haz un <strong>SOS manual</strong> en el reloj: llegará un único SMS con la frase de alerta y el enlace al mapa. El estado de la app mostrará «SMS enviado a 1 teléfono(s)».</li>
+</ol>
+
+<h2>Cómo funciona</h2>
+<p>El reloj avisa a la app Zepp del móvil, que publica la alerta en <strong>ntfy</strong>. SOS Impact Puente mantiene una conexión con tu tema y, cuando llega la alerta, manda el SMS por la tarjeta SIM que tengas como «SMS predeterminada» en Android. Solo se manda SMS con la <strong>alerta inicial</strong> (y con la prueba de ntfy): no con los avisos posteriores, no se repite si ntfy reenvía el aviso y no se manda ninguno de más de 30 minutos.</p>
+
+<h2>Si no funciona</h2>
+<div class="tbl"><table><tr><th>Síntoma</th><th>Qué revisar</th></tr>
+<tr><td>El estado dice «Sin conexión, reintentando…»</td><td>Comprueba que el móvil tiene datos o Wi-Fi y que el tema está bien escrito.</td></tr>
+<tr><td>«Falta el permiso de SMS»</td><td>Ajustes de Android → Aplicaciones → SOS Impact Puente → Permisos → SMS → Permitir.</td></tr>
+<tr><td>El SMS de prueba no llega</td><td>Revisa que la SIM marcada como «SMS predeterminada» tiene cobertura y saldo/SMS, y que el teléfono está bien escrito, con prefijo.</td></tr>
+<tr><td>Funciona un rato y luego deja de funcionar</td><td>El sistema cierra la app: quita las restricciones de batería, activa el inicio automático y fija la app (paso 5).</td></tr>
+<tr><td>No llama, pero el SMS sí sale</td><td>Revisa los permisos de <em>llamadas</em> y <em>Mostrar sobre otras apps</em> (Ajustes → Aplicaciones → SOS Impact Puente) y prueba con <em>Llamada de prueba</em>. En Xiaomi, permite también «Mostrar ventanas emergentes en segundo plano».</td></tr>
+<tr><td>Quiero dejar de usarla</td><td>Pulsa <em>Detener vigilancia</em>. En SOS Impact puedes <em>Desactivar ntfy</em>.</td></tr></table></div>
+
+<h2>Privacidad</h2>
+<p>La app solo se conecta a ntfy (ntfy.sh o tu servidor) para leer los avisos de tu tema y usa el permiso de SMS únicamente para mandar el SMS de alerta a los teléfonos que tú escribes. No tiene cuentas, anuncios ni analítica, y no envía tus datos a ningún otro sitio. El tema secreto es la única «contraseña» del aviso: no lo compartas.</p>
+<footer>© 2026 <a href="https://super-ia.es">Super-ia</a> · SOS Impact · <a href="privacidad.html">Política de privacidad</a></footer>
+</main></body></html>
