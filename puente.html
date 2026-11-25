@@ -17,9 +17,9 @@
 <li><strong>Activa ntfy en SOS Impact.</strong> En la app Zepp abre los ajustes de SOS Impact, busca el cuadro <em>Aviso por ntfy</em> y pulsa <em>Activar ntfy</em>. Aparece un <strong>tema secreto</strong> (<code>sosimpact-…</code>). Cópialo y <strong>no lo publiques</strong>.
 <figure><img src="img/app-ntfy.jpg" alt="Cuadro Aviso por ntfy en los ajustes de SOS Impact" loading="lazy"><figcaption>Cuadro «Aviso por ntfy» de los ajustes de SOS Impact: aquí está el tema secreto. (Imagen de ejemplo.)</figcaption></figure></li>
 
-<li><strong>Descarga e instala la app.</strong> Descarga <a href="SOS-Impact-Puente.apk"><strong>SOS-Impact-Puente.apk</strong></a> desde el móvil. Android pedirá permiso para <em>instalar apps de orígenes desconocidos</em> (es normal: la app no está en Google Play porque Play no permite que una app envíe SMS). Acepta e instala.</li>
+<li><strong>Descarga e instala la app.</strong> Descarga <a href="SOS-Impact-Puente.apk"><strong>SOS-Impact-Puente.apk</strong></a> desde el móvil. Android pedirá permiso para <em>instalar apps de orígenes desconocidos</em> (es normal: la app no está en Google Play porque Play no permite que una app envíe SMS). Acepta e instala. <strong>En Android 13 o posterior</strong>, antes de dar el permiso de SMS (paso 4) tendrás que ir a Ajustes → Aplicaciones → SOS Impact Puente → ⋮ → <em>Permitir ajustes restringidos</em>.</li>
 
-<li><strong>Escribe el tema y el teléfono.</strong> Abre <em>SOS Impact Puente</em>, pega el tema (o el enlace completo) y escribe el teléfono que recibirá el SMS, con prefijo (por ejemplo <code>+34600111222</code>). Puedes poner hasta tres teléfonos y, si quieres, un texto que se añade delante (por ejemplo tu nombre).</li>
+<li><strong>Escribe el tema y el teléfono.</strong> Abre <em>SOS Impact Puente</em>, pega el tema (o el enlace completo) y escribe el teléfono que recibirá el SMS, con prefijo (por ejemplo <code>+34600111222</code>). Puedes poner hasta dos teléfonos. No hace falta tocar nada más.</li>
 
 <li><strong>Llamadas (opcional).</strong> Marca «Llamar también al primer teléfono (después del SMS)» si quieres que, tras el SMS, el móvil llame al primer número. Android pedirá el permiso de <em>llamadas</em> y, para poder llamar con el móvil bloqueado o con otra app abierta, el permiso <em>Mostrar sobre otras apps</em>: acéptalos. Usa antes el botón <em>Llamada de prueba</em>.</li>
 
@@ -36,7 +36,7 @@
 <h2>Si no funciona</h2>
 <div class="tbl"><table><tr><th>Síntoma</th><th>Qué revisar</th></tr>
 <tr><td>El estado dice «Sin conexión, reintentando…»</td><td>Comprueba que el móvil tiene datos o Wi-Fi y que el tema está bien escrito.</td></tr>
-<tr><td>«Falta el permiso de SMS»</td><td>Ajustes de Android → Aplicaciones → SOS Impact Puente → Permisos → SMS → Permitir.</td></tr>
+<tr><td>«Falta el permiso de SMS» o el permiso de SMS sale en gris</td><td>Ajustes de Android → Aplicaciones → SOS Impact Puente → toca <strong>⋮</strong> (arriba a la derecha) → <strong>Permitir ajustes restringidos</strong> (confirma con tu huella o PIN) → vuelve a Permisos → SMS → <strong>Permitir</strong>. Android 13 y posteriores bloquean los SMS a las apps instaladas fuera de Google Play hasta que haces esto.</td></tr>
 <tr><td>El SMS de prueba no llega</td><td>Revisa que la SIM marcada como «SMS predeterminada» tiene cobertura y saldo/SMS, y que el teléfono está bien escrito, con prefijo.</td></tr>
 <tr><td>Funciona un rato y luego deja de funcionar</td><td>El sistema cierra la app: quita las restricciones de batería, activa el inicio automático y fija la app (paso 5).</td></tr>
 <tr><td>No llama, pero el SMS sí sale</td><td>Revisa los permisos de <em>llamadas</em> y <em>Mostrar sobre otras apps</em> (Ajustes → Aplicaciones → SOS Impact Puente) y prueba con <em>Llamada de prueba</em>. En Xiaomi, permite también «Mostrar ventanas emergentes en segundo plano».</td></tr>
