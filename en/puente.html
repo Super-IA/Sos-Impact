@@ -17,9 +17,9 @@
 <li><strong>Enable ntfy in SOS Impact.</strong> In the Zepp app open the SOS Impact settings, find the <em>ntfy alert</em> box and tap <em>Enable ntfy</em>. A <strong>secret topic</strong> (<code>sosimpact-…</code>) appears. Copy it and <strong>do not publish it</strong>.
 <figure><img src="../img/app-ntfy.jpg" alt="ntfy alert box in the SOS Impact settings" loading="lazy"><figcaption>The “ntfy alert” box in the SOS Impact settings: the secret topic is here. (Example image; the screenshot is in Spanish.)</figcaption></figure></li>
 
-<li><strong>Download and install the app.</strong> Download <a href="../SOS-Impact-Puente.apk"><strong>SOS-Impact-Puente.apk</strong></a> on your phone. Android will ask for permission to <em>install apps from unknown sources</em> (this is normal: the app is not on Google Play because Play does not allow an app to send SMS). Accept and install.</li>
+<li><strong>Download and install the app.</strong> Download <a href="../SOS-Impact-Puente.apk"><strong>SOS-Impact-Puente.apk</strong></a> on your phone. Android will ask for permission to <em>install apps from unknown sources</em> (this is normal: the app is not on Google Play because Play does not allow an app to send SMS). Accept and install. <strong>On Android 13 or later</strong>, before granting the SMS permission (step 4) go to Settings → Apps → SOS Impact Bridge → ⋮ → <em>Allow restricted settings</em>.</li>
 
-<li><strong>Type the topic and the phone number.</strong> Open <em>SOS Impact Bridge</em>, paste the topic (or the full link) and type the phone number that will get the SMS, with country code (for example <code>+34600111222</code>). You can add up to three numbers and, if you like, a text that is added at the start (for example your name).</li>
+<li><strong>Type the topic and the phone number.</strong> Open <em>SOS Impact Bridge</em>, paste the topic (or the full link) and type the phone number that will get the SMS, with country code (for example <code>+34600111222</code>). You can add up to two numbers. Nothing else needs changing.</li>
 
 <li><strong>Calls (optional).</strong> Tick “Also call the first phone number (after the SMS)” if you want the phone to call the first number after the SMS. Android will ask for the <em>phone</em> permission and, to be able to call with the phone locked or another app open, the <em>Display over other apps</em> permission: accept both. Try the <em>Test call</em> button first.</li>
 
@@ -36,7 +36,7 @@
 <h2>If it does not work</h2>
 <div class="tbl"><table><tr><th>Symptom</th><th>What to check</th></tr>
 <tr><td>The status says “No connection, retrying…”</td><td>Check that the phone has data or Wi-Fi and that the topic is typed correctly.</td></tr>
-<tr><td>“SMS permission is missing”</td><td>Android settings → Apps → SOS Impact Bridge → Permissions → SMS → Allow.</td></tr>
+<tr><td>“SMS permission is missing” or the SMS permission is greyed out</td><td>Android settings → Apps → SOS Impact Bridge → tap <strong>⋮</strong> (top right) → <strong>Allow restricted settings</strong> (confirm with your fingerprint or PIN) → go back to Permissions → SMS → <strong>Allow</strong>. Android 13 and later block SMS for apps installed from outside Google Play until you do this.</td></tr>
 <tr><td>The test SMS does not arrive</td><td>Check that the SIM set as “default for SMS” has coverage and credit/SMS, and that the phone number is correct, with country code.</td></tr>
 <tr><td>It works for a while and then stops</td><td>The system closes the app: remove battery restrictions, enable auto-start and pin the app (step 5).</td></tr>
 <tr><td>It does not call, but the SMS is sent</td><td>Check the <em>phone</em> and <em>Display over other apps</em> permissions (Settings → Apps → SOS Impact Bridge) and try <em>Test call</em>. On Xiaomi also allow “Display pop-up windows while running in the background”.</td></tr>
